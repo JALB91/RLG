@@ -1,1 +1,1 @@
-/usr/bin/c++    -lncurses   -lncurses CMakeFiles/main.dir/src/GameManager.cpp.o CMakeFiles/main.dir/src/Node.cpp.o CMakeFiles/main.dir/src/Player.cpp.o CMakeFiles/main.dir/src/Pos.cpp.o CMakeFiles/main.dir/src/main.cpp.o  -o main -rdynamic -lcurses -lform 
+/usr/bin/c++    -Wall  -lncurses   -Wall -lncurses CMakeFiles/main.dir/src/GameManager.cpp.o CMakeFiles/main.dir/src/Node.cpp.o CMakeFiles/main.dir/src/Player.cpp.o CMakeFiles/main.dir/src/Pos.cpp.o CMakeFiles/main.dir/src/Size.cpp.o CMakeFiles/main.dir/src/main.cpp.o  -o main -rdynamic -lcurses -lform 

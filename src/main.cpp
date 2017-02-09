@@ -5,12 +5,15 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-	initscr();
-    refresh();
-    
-    GameManager::getInstance()->gameLoop();
+    initscr();
+    curs_set(0);
+    noecho();
+    cbreak();
 
-    getch();
+    refresh();
+
+    GameManager::getInstance()->mainLoop();
+
     endwin();
 
     return 0;

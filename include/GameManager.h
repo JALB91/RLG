@@ -1,33 +1,31 @@
 #ifndef GAMEMANAGER_H
 #define GAMEMANAGER_H 
 
-#include <unordered_map>
-#include "Pos.h"
+#include "Const.h"
 #include "Node.h"
+#include "Size.h"
+#include "Pos.h"
 #include "Player.h"
 
-class GameManager
+class GameManager: public Node
 {
-public:
-    static GameManager* getInstance();
+    public:
+        static GameManager* getInstance();
 
-    int getWidth();
-    int getHeight();
+        void update(float delta) override;
 
-    void gameLoop();
+        void mainLoop();
 
-protected:
-    GameManager();
-    ~GameManager();
+    protected:
+        GameManager();
+        ~GameManager();
 
-private:
-    static GameManager* _instance;
+        bool init() override;
 
-    const int width;
-    const int height;
+    private:
+        static GameManager* _instance;
 
-    std::unordered_map<Pos, char> game_map;
-    Player* player;
+        Player* player;
 };
 
 #endif /* GAMEMANAGER_H */

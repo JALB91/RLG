@@ -231,6 +231,33 @@ src/Pos.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Pos.cpp.s
 .PHONY : src/Pos.cpp.s
 
+src/Size.o: src/Size.cpp.o
+
+.PHONY : src/Size.o
+
+# target to build an object file
+src/Size.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Size.cpp.o
+.PHONY : src/Size.cpp.o
+
+src/Size.i: src/Size.cpp.i
+
+.PHONY : src/Size.i
+
+# target to preprocess a source file
+src/Size.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Size.cpp.i
+.PHONY : src/Size.cpp.i
+
+src/Size.s: src/Size.cpp.s
+
+.PHONY : src/Size.s
+
+# target to generate assembly for a file
+src/Size.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Size.cpp.s
+.PHONY : src/Size.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -279,6 +306,9 @@ help:
 	@echo "... src/Pos.o"
 	@echo "... src/Pos.i"
 	@echo "... src/Pos.s"
+	@echo "... src/Size.o"
+	@echo "... src/Size.i"
+	@echo "... src/Size.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

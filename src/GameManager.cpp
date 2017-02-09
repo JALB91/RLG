@@ -1,10 +1,8 @@
 #include "GameManager.h"
-#include "ncurses.h"
-
+#include <algorithm>
 
 
 GameManager* GameManager::_instance = nullptr;
-
 
 
 GameManager* GameManager::getInstance()
@@ -12,85 +10,84 @@ GameManager* GameManager::getInstance()
     if (!_instance)
     {
         _instance = new GameManager();
+        _instance->init();
     }
 
     return _instance;
 }
 
 
-
-GameManager::GameManager() : width(50), height(50)
+GameManager::GameManager() : Node()
 {
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            game_map[Pos(i, j)] = '.';
-        }
-    }
 
-    player = Player::create();
 }
 
 GameManager::~GameManager()
 {
-    delete player;
+
 }
 
 
-
-int GameManager::getWidth()
+bool GameManager::init()
 {
-    return width;
+    if (!Node::init())
+    {
+        return false;
+    }
+
+    setName("GameManager");
+
+    player = Player::create();
+
+    addChild(player);
+
+    return true;
 }
 
-int GameManager::getHeight()
+
+void GameManager::update(float delta)
 {
-    return height;
+    vector<Node*> children = getChildren();
+
+    sort(children.begin(), children.end(), [] (const Node* a, const Node* b)
+            {
+                return a->getZOrd() < b->getZOrd();
+            });
+
+    for (Node* child: children)
+    {
+        child->update(delta);
+    }
+
+    string s = "DELTA: " + std::to_string(delta);
+    mvaddstr(0, 0, s.c_str());
 }
 
 
-
-void GameManager::gameLoop()
+void GameManager::mainLoop()
 {
-    int ch;
+    int ch = 0;
+    float delta = 0.0f;
+
+    WINDOW* win = newwin(12, 12, visibleCenter.y - 6, visibleCenter.x - 6);
+
+    keypad(win, TRUE);
+    nodelay(win, TRUE);
+    box(win, '|', '-');
 
     do
     {
-        refresh();
-
-        for (int i = 0; i < height; i++)
-        {
-            for (int j = 0; j < width; j++)
-            {
-                mvaddch(i, j, game_map[Pos(i, j)]);
-            }
-        }
+        update(delta);
+        draw(win);
 
         refresh();
+        wrefresh(win);
 
-        ch = getch();
+        ch = wgetch(win);
 
-        if (ch == 'q' || ch == 'Q')
-        {
-            
-        }
-        else if (ch == 'w' || ch == 'W')
-        {
-            
-        }
-        else if (ch == 'a' || ch == 'A')
-        {
+        player->handleInput(win, ch);
 
-        }
-        else if (ch == 's' || ch == 'S')
-        {
-
-        }
-        else if (ch == 'd' || ch == 'D')
-        {
-
-        }
+        delta += 0.000037;
     }
     while (ch != 'q' && ch != 'Q');
 }

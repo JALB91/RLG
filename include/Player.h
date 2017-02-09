@@ -2,20 +2,24 @@
 #define PLAYER_H 
 
 #include "Pos.h"
+#include "Node.h"
 
 class Player : public Node
 {
-public:
-    static Player* create();
+    public:
+        static Player* create();
 
-    ~Player();
+        virtual ~Player();
 
-protected:
-    Player();
+        void draw(WINDOW* win) override;
+        void handleInput(WINDOW* win, int ch);
 
-    bool init() override;
+    protected:
+        Player();
 
-private:
+        bool init() override;
+
+    private:
 
 };
 

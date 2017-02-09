@@ -23,3 +23,37 @@ Pos::~Pos()
 {
 
 }
+
+
+bool Pos::operator==(const Pos& p) const
+{
+    return (this->x == p.x && this->y == p.y);
+}
+
+template<> Pos& Pos::operator+=(const Pos& p)
+{
+    this->x += p.x;
+    this->y += p.y;
+    return *this;
+}
+
+template<> Pos& Pos::operator-=(const Pos& p)
+{
+    this->x -= p.x;
+    this->y -= p.y;
+    return *this;
+}
+
+template<> Pos& Pos::operator*=(const Pos& p)
+{
+    this->x *= p.x;
+    this->y *= p.y;
+    return *this;
+}
+
+template<> Pos& Pos::operator/=(const Pos& p)
+{
+    this->x /= p.x;
+    this->y /= p.y;
+    return *this;
+}

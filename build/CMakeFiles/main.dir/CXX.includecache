@@ -6,45 +6,79 @@
 
 #IncludeRegexTransform: 
 
+../include/Const.h
+ncurses.h
+../include/ncurses.h
+
 ../include/GameManager.h
-unordered_map
--
-Pos.h
-../include/Pos.h
+Const.h
+../include/Const.h
 Node.h
 ../include/Node.h
+Size.h
+../include/Size.h
+Pos.h
+../include/Pos.h
 Player.h
 ../include/Player.h
 
 ../include/Node.h
+string
+-
+vector
+-
+Const.h
+../include/Const.h
+Size.h
+../include/Size.h
 Pos.h
 ../include/Pos.h
 
 ../include/Player.h
 Pos.h
 ../include/Pos.h
+Node.h
+../include/Node.h
 
 ../include/Pos.h
+cstddef
+-
+functional
+-
+
+../include/Size.h
 
 /home/damiano/Games/RLG/src/GameManager.cpp
 GameManager.h
 /home/damiano/Games/RLG/src/GameManager.h
-ncurses.h
-/home/damiano/Games/RLG/src/ncurses.h
+algorithm
+-
 
 /home/damiano/Games/RLG/src/Node.cpp
 Node.h
 /home/damiano/Games/RLG/src/Node.h
+Const.h
+/home/damiano/Games/RLG/src/Const.h
+algorithm
+-
+assert.h
+-
 
 /home/damiano/Games/RLG/src/Player.cpp
 Player.h
 /home/damiano/Games/RLG/src/Player.h
+Const.h
+/home/damiano/Games/RLG/src/Const.h
 GameManager.h
 /home/damiano/Games/RLG/src/GameManager.h
 
 /home/damiano/Games/RLG/src/Pos.cpp
 Pos.h
 /home/damiano/Games/RLG/src/Pos.h
+
+/home/damiano/Games/RLG/src/Size.cpp
+Size.h
+/home/damiano/Games/RLG/src/Size.h
 
 /home/damiano/Games/RLG/src/main.cpp
 ncurses.h

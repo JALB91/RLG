@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/Node.cpp.o"
   "CMakeFiles/main.dir/src/Player.cpp.o"
   "CMakeFiles/main.dir/src/Pos.cpp.o"
+  "CMakeFiles/main.dir/src/Size.cpp.o"
   "CMakeFiles/main.dir/src/main.cpp.o"
   "main.pdb"
   "main"

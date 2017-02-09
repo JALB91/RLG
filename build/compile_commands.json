@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/damiano/Games/RLG/build",
+  "command": "/usr/bin/c++    -I/home/damiano/Games/RLG/include   -Wall  -lncurses   -std=gnu++11 -o CMakeFiles/main.dir/src/GameManager.cpp.o -c /home/damiano/Games/RLG/src/GameManager.cpp",
+  "file": "/home/damiano/Games/RLG/src/GameManager.cpp"
+},
+{
+  "directory": "/home/damiano/Games/RLG/build",
+  "command": "/usr/bin/c++    -I/home/damiano/Games/RLG/include   -Wall  -lncurses   -std=gnu++11 -o CMakeFiles/main.dir/src/Node.cpp.o -c /home/damiano/Games/RLG/src/Node.cpp",
+  "file": "/home/damiano/Games/RLG/src/Node.cpp"
+},
+{
+  "directory": "/home/damiano/Games/RLG/build",
+  "command": "/usr/bin/c++    -I/home/damiano/Games/RLG/include   -Wall  -lncurses   -std=gnu++11 -o CMakeFiles/main.dir/src/Player.cpp.o -c /home/damiano/Games/RLG/src/Player.cpp",
+  "file": "/home/damiano/Games/RLG/src/Player.cpp"
+},
+{
+  "directory": "/home/damiano/Games/RLG/build",
+  "command": "/usr/bin/c++    -I/home/damiano/Games/RLG/include   -Wall  -lncurses   -std=gnu++11 -o CMakeFiles/main.dir/src/Pos.cpp.o -c /home/damiano/Games/RLG/src/Pos.cpp",
+  "file": "/home/damiano/Games/RLG/src/Pos.cpp"
+},
+{
+  "directory": "/home/damiano/Games/RLG/build",
+  "command": "/usr/bin/c++    -I/home/damiano/Games/RLG/include   -Wall  -lncurses   -std=gnu++11 -o CMakeFiles/main.dir/src/Size.cpp.o -c /home/damiano/Games/RLG/src/Size.cpp",
+  "file": "/home/damiano/Games/RLG/src/Size.cpp"
+},
+{
+  "directory": "/home/damiano/Games/RLG/build",
+  "command": "/usr/bin/c++    -I/home/damiano/Games/RLG/include   -Wall  -lncurses   -std=gnu++11 -o CMakeFiles/main.dir/src/main.cpp.o -c /home/damiano/Games/RLG/src/main.cpp",
+  "file": "/home/damiano/Games/RLG/src/main.cpp"
+}
+]

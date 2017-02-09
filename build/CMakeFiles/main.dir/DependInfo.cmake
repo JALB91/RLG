@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/damiano/Games/RLG/src/Node.cpp" "/home/damiano/Games/RLG/build/CMakeFiles/main.dir/src/Node.cpp.o"
   "/home/damiano/Games/RLG/src/Player.cpp" "/home/damiano/Games/RLG/build/CMakeFiles/main.dir/src/Player.cpp.o"
   "/home/damiano/Games/RLG/src/Pos.cpp" "/home/damiano/Games/RLG/build/CMakeFiles/main.dir/src/Pos.cpp.o"
+  "/home/damiano/Games/RLG/src/Size.cpp" "/home/damiano/Games/RLG/build/CMakeFiles/main.dir/src/Size.cpp.o"
   "/home/damiano/Games/RLG/src/main.cpp" "/home/damiano/Games/RLG/build/CMakeFiles/main.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
