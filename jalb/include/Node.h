@@ -3,11 +3,14 @@
 
 #include <string>
 #include <vector>
-#include "Const.h"
-#include "Size.h"
+#include "Macros.h"
 #include "Pos.h"
+#include "Size.h"
+#include "ncurses.h"
 
 using namespace std;
+
+NS_JALB_BEGIN
 
 class Node
 {
@@ -67,6 +70,8 @@ class Node
 
 	    virtual bool init();
 
+        void scheduleUpdate();
+
         string _name;
 
         int _z_ord, _tag;
@@ -80,5 +85,7 @@ class Node
     private:
 
 };
+
+NS_JALB_END
 
 #endif

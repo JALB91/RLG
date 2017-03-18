@@ -123,6 +123,19 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+#=============================================================================
+# Target rules for targets named jalb
+
+# Build rule for target.
+jalb: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jalb
+.PHONY : jalb
+
+# fast build rule for target.
+jalb/fast:
+	$(MAKE) -f jalb/CMakeFiles/jalb.dir/build.make jalb/CMakeFiles/jalb.dir/build
+.PHONY : jalb/fast
+
 src/GameManager.o: src/GameManager.cpp.o
 
 .PHONY : src/GameManager.o
@@ -150,32 +163,32 @@ src/GameManager.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/GameManager.cpp.s
 .PHONY : src/GameManager.cpp.s
 
-src/Node.o: src/Node.cpp.o
+src/Map.o: src/Map.cpp.o
 
-.PHONY : src/Node.o
+.PHONY : src/Map.o
 
 # target to build an object file
-src/Node.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Node.cpp.o
-.PHONY : src/Node.cpp.o
+src/Map.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Map.cpp.o
+.PHONY : src/Map.cpp.o
 
-src/Node.i: src/Node.cpp.i
+src/Map.i: src/Map.cpp.i
 
-.PHONY : src/Node.i
+.PHONY : src/Map.i
 
 # target to preprocess a source file
-src/Node.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Node.cpp.i
-.PHONY : src/Node.cpp.i
+src/Map.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Map.cpp.i
+.PHONY : src/Map.cpp.i
 
-src/Node.s: src/Node.cpp.s
+src/Map.s: src/Map.cpp.s
 
-.PHONY : src/Node.s
+.PHONY : src/Map.s
 
 # target to generate assembly for a file
-src/Node.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Node.cpp.s
-.PHONY : src/Node.cpp.s
+src/Map.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Map.cpp.s
+.PHONY : src/Map.cpp.s
 
 src/Player.o: src/Player.cpp.o
 
@@ -203,60 +216,6 @@ src/Player.s: src/Player.cpp.s
 src/Player.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Player.cpp.s
 .PHONY : src/Player.cpp.s
-
-src/Pos.o: src/Pos.cpp.o
-
-.PHONY : src/Pos.o
-
-# target to build an object file
-src/Pos.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Pos.cpp.o
-.PHONY : src/Pos.cpp.o
-
-src/Pos.i: src/Pos.cpp.i
-
-.PHONY : src/Pos.i
-
-# target to preprocess a source file
-src/Pos.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Pos.cpp.i
-.PHONY : src/Pos.cpp.i
-
-src/Pos.s: src/Pos.cpp.s
-
-.PHONY : src/Pos.s
-
-# target to generate assembly for a file
-src/Pos.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Pos.cpp.s
-.PHONY : src/Pos.cpp.s
-
-src/Size.o: src/Size.cpp.o
-
-.PHONY : src/Size.o
-
-# target to build an object file
-src/Size.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Size.cpp.o
-.PHONY : src/Size.cpp.o
-
-src/Size.i: src/Size.cpp.i
-
-.PHONY : src/Size.i
-
-# target to preprocess a source file
-src/Size.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Size.cpp.i
-.PHONY : src/Size.cpp.i
-
-src/Size.s: src/Size.cpp.s
-
-.PHONY : src/Size.s
-
-# target to generate assembly for a file
-src/Size.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Size.cpp.s
-.PHONY : src/Size.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -294,21 +253,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
+	@echo "... jalb"
 	@echo "... src/GameManager.o"
 	@echo "... src/GameManager.i"
 	@echo "... src/GameManager.s"
-	@echo "... src/Node.o"
-	@echo "... src/Node.i"
-	@echo "... src/Node.s"
+	@echo "... src/Map.o"
+	@echo "... src/Map.i"
+	@echo "... src/Map.s"
 	@echo "... src/Player.o"
 	@echo "... src/Player.i"
 	@echo "... src/Player.s"
-	@echo "... src/Pos.o"
-	@echo "... src/Pos.i"
-	@echo "... src/Pos.s"
-	@echo "... src/Size.o"
-	@echo "... src/Size.i"
-	@echo "... src/Size.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

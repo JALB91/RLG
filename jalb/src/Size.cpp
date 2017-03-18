@@ -1,5 +1,6 @@
 #include "Size.h"
 
+NS_JALB_BEGIN
 
 Size::Size(int w, int h) : width(w), height(h)
 {
@@ -20,3 +21,5 @@ Size::~Size()
 {
 
 }
+
+NS_JALB_END

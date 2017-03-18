@@ -3,6 +3,11 @@
 
 #include <cstddef>
 #include <functional>
+#include "Macros.h"
+
+using namespace std;
+
+NS_JALB_BEGIN
 
 class Pos
 {
@@ -14,6 +19,7 @@ class Pos
         ~Pos();
 
         bool operator==(const Pos& p) const;
+        bool operator!=(const Pos& p) const;
 
         template<class T> Pos& operator+=(const T& t);
         template<class T> Pos& operator-=(const T& t);
@@ -23,6 +29,11 @@ class Pos
         template<class T> Pos  operator-(const T& rt);
         template<class T> Pos  operator*(const T& rt);
         template<class T> Pos  operator/(const T& rt);
+
+        Pos& operator+=(const Pos& p);
+        Pos& operator-=(const Pos& p);
+        Pos& operator*=(const Pos& p);
+        Pos& operator/=(const Pos& p);
 
         int x;
         int y;
@@ -86,13 +97,22 @@ template<class T> Pos Pos::operator/(const T& t)
     return *this;
 }
 
-struct PosHasher
+NS_JALB_END
+
+namespace std
 {
-    std::size_t operator()(const Pos& p) const
+    template<>
+    struct hash<jalb::Pos>
     {
-        return ((std::hash<int>()(p.x)) ^ (std::hash<int>()(p.y)));
-    }
-};
+        std::size_t operator()(const jalb::Pos& pos) const
+        {
+            using std::size_t;
+            using std::hash;
+            
+            return ((hash<int>()(pos.x)) ^ (hash<int>()(pos.y)));
+        }
+    };
+}
 
 
 #endif /* POS_H */

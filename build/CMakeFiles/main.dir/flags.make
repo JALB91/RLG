@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall  -lncurses   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/damiano/Games/RLG/include 
+CXX_INCLUDES = -I/home/damiano/Games/RLG/include -I/home/damiano/Games/RLG/jalb 
 

@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/damiano/Games/RLG/jalb/build",
+  "command": "/usr/bin/c++    -I/home/damiano/Games/RLG/jalb/include -I/home/damiano/Games/RLG/jalb/.   -Wall  -lncurses   -std=gnu++11 -o CMakeFiles/jalb.dir/jalb.cpp.o -c /home/damiano/Games/RLG/jalb/jalb.cpp",
+  "file": "/home/damiano/Games/RLG/jalb/jalb.cpp"
+},
+{
+  "directory": "/home/damiano/Games/RLG/jalb/build",
+  "command": "/usr/bin/c++    -I/home/damiano/Games/RLG/jalb/include -I/home/damiano/Games/RLG/jalb/.   -Wall  -lncurses   -std=gnu++11 -o CMakeFiles/jalb.dir/src/Director.cpp.o -c /home/damiano/Games/RLG/jalb/src/Director.cpp",
+  "file": "/home/damiano/Games/RLG/jalb/src/Director.cpp"
+},
+{
+  "directory": "/home/damiano/Games/RLG/jalb/build",
+  "command": "/usr/bin/c++    -I/home/damiano/Games/RLG/jalb/include -I/home/damiano/Games/RLG/jalb/.   -Wall  -lncurses   -std=gnu++11 -o CMakeFiles/jalb.dir/src/Node.cpp.o -c /home/damiano/Games/RLG/jalb/src/Node.cpp",
+  "file": "/home/damiano/Games/RLG/jalb/src/Node.cpp"
+},
+{
+  "directory": "/home/damiano/Games/RLG/jalb/build",
+  "command": "/usr/bin/c++    -I/home/damiano/Games/RLG/jalb/include -I/home/damiano/Games/RLG/jalb/.   -Wall  -lncurses   -std=gnu++11 -o CMakeFiles/jalb.dir/src/Pos.cpp.o -c /home/damiano/Games/RLG/jalb/src/Pos.cpp",
+  "file": "/home/damiano/Games/RLG/jalb/src/Pos.cpp"
+},
+{
+  "directory": "/home/damiano/Games/RLG/jalb/build",
+  "command": "/usr/bin/c++    -I/home/damiano/Games/RLG/jalb/include -I/home/damiano/Games/RLG/jalb/.   -Wall  -lncurses   -std=gnu++11 -o CMakeFiles/jalb.dir/src/Size.cpp.o -c /home/damiano/Games/RLG/jalb/src/Size.cpp",
+  "file": "/home/damiano/Games/RLG/jalb/src/Size.cpp"
+}
+]

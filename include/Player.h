@@ -1,21 +1,21 @@
 #ifndef PLAYER_H
 #define PLAYER_H 
 
-#include "Pos.h"
-#include "Node.h"
+#include "jalb.h"
+
+USING_NS_JALB;
 
 class Player : public Node
 {
     public:
         static Player* create();
 
-        virtual ~Player();
-
         void draw(WINDOW* win) override;
-        void handleInput(WINDOW* win, int ch);
+        void handleInput(int ch);
 
     protected:
         Player();
+        virtual ~Player();
 
         bool init() override;
 

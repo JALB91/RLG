@@ -1,6 +1,10 @@
 #ifndef SIZE_H
 #define SIZE_H 
 
+#include "Macros.h"
+
+NS_JALB_BEGIN
+
 class Size
 {
     public:
@@ -18,5 +22,7 @@ class Size
     private:
 
 };
+
+NS_JALB_END
 
 #endif /* SIZE_H */

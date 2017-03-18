@@ -1,5 +1,4 @@
 #include "GameManager.h"
-#include <algorithm>
 
 
 GameManager* GameManager::_instance = nullptr;
@@ -19,7 +18,7 @@ GameManager* GameManager::getInstance()
 
 GameManager::GameManager() : Node()
 {
-
+    time = 0.0f;
 }
 
 GameManager::~GameManager()
@@ -37,9 +36,21 @@ bool GameManager::init()
 
     setName("GameManager");
 
-    player = Player::create();
+    int winWidth = 30 * COL_SIZE;
+    int winHeight = 30 * ROW_SIZE;
 
+    win = newwin(winHeight, winWidth, visibleCenter.y - winHeight * 0.5, visibleCenter.x - winWidth * 0.5);
+    keypad(win, TRUE);
+
+    gameMap = Map::create(Size(28, 28));
+    gameMap->setPosition(1, 1);
+    gameMap->findPath(Pos(20, 11));
+    addChild(gameMap);
+
+    player = Player::create();
     addChild(player);
+
+    scheduleUpdate();
 
     return true;
 }
@@ -47,47 +58,17 @@ bool GameManager::init()
 
 void GameManager::update(float delta)
 {
-    vector<Node*> children = getChildren();
+    wclear(win);
+    mvprintw(0, 0, "DELTA: %2f", time);
 
-    sort(children.begin(), children.end(), [] (const Node* a, const Node* b)
-            {
-                return a->getZOrd() < b->getZOrd();
-            });
+    box(win, 0, 0);
 
-    for (Node* child: children)
-    {
-        child->update(delta);
-    }
+    gameMap->drawPath(player->getPosition());
 
-    string s = "DELTA: " + std::to_string(delta);
-    mvaddstr(0, 0, s.c_str());
-}
+    draw(win);
 
+    refresh();
+    wrefresh(win);
 
-void GameManager::mainLoop()
-{
-    int ch = 0;
-    float delta = 0.0f;
-
-    WINDOW* win = newwin(12, 12, visibleCenter.y - 6, visibleCenter.x - 6);
-
-    keypad(win, TRUE);
-    nodelay(win, TRUE);
-    box(win, '|', '-');
-
-    do
-    {
-        update(delta);
-        draw(win);
-
-        refresh();
-        wrefresh(win);
-
-        ch = wgetch(win);
-
-        player->handleInput(win, ch);
-
-        delta += 0.000037;
-    }
-    while (ch != 'q' && ch != 'Q');
+    time += delta;
 }

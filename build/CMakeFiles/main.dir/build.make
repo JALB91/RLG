@@ -57,9 +57,33 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
+CMakeFiles/main.dir/src/Map.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/Map.cpp.o: ../src/Map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/Map.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/Map.cpp.o -c /home/damiano/Games/RLG/src/Map.cpp
+
+CMakeFiles/main.dir/src/Map.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Map.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damiano/Games/RLG/src/Map.cpp > CMakeFiles/main.dir/src/Map.cpp.i
+
+CMakeFiles/main.dir/src/Map.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Map.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damiano/Games/RLG/src/Map.cpp -o CMakeFiles/main.dir/src/Map.cpp.s
+
+CMakeFiles/main.dir/src/Map.cpp.o.requires:
+
+.PHONY : CMakeFiles/main.dir/src/Map.cpp.o.requires
+
+CMakeFiles/main.dir/src/Map.cpp.o.provides: CMakeFiles/main.dir/src/Map.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Map.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/src/Map.cpp.o.provides
+
+CMakeFiles/main.dir/src/Map.cpp.o.provides.build: CMakeFiles/main.dir/src/Map.cpp.o
+
+
 CMakeFiles/main.dir/src/GameManager.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/GameManager.cpp.o: ../src/GameManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/GameManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/GameManager.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/GameManager.cpp.o -c /home/damiano/Games/RLG/src/GameManager.cpp
 
 CMakeFiles/main.dir/src/GameManager.cpp.i: cmake_force
@@ -81,105 +105,9 @@ CMakeFiles/main.dir/src/GameManager.cpp.o.provides: CMakeFiles/main.dir/src/Game
 CMakeFiles/main.dir/src/GameManager.cpp.o.provides.build: CMakeFiles/main.dir/src/GameManager.cpp.o
 
 
-CMakeFiles/main.dir/src/Node.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Node.cpp.o: ../src/Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/Node.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/Node.cpp.o -c /home/damiano/Games/RLG/src/Node.cpp
-
-CMakeFiles/main.dir/src/Node.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Node.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damiano/Games/RLG/src/Node.cpp > CMakeFiles/main.dir/src/Node.cpp.i
-
-CMakeFiles/main.dir/src/Node.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Node.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damiano/Games/RLG/src/Node.cpp -o CMakeFiles/main.dir/src/Node.cpp.s
-
-CMakeFiles/main.dir/src/Node.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.dir/src/Node.cpp.o.requires
-
-CMakeFiles/main.dir/src/Node.cpp.o.provides: CMakeFiles/main.dir/src/Node.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Node.cpp.o.provides.build
-.PHONY : CMakeFiles/main.dir/src/Node.cpp.o.provides
-
-CMakeFiles/main.dir/src/Node.cpp.o.provides.build: CMakeFiles/main.dir/src/Node.cpp.o
-
-
-CMakeFiles/main.dir/src/Player.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Player.cpp.o: ../src/Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/Player.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/Player.cpp.o -c /home/damiano/Games/RLG/src/Player.cpp
-
-CMakeFiles/main.dir/src/Player.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Player.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damiano/Games/RLG/src/Player.cpp > CMakeFiles/main.dir/src/Player.cpp.i
-
-CMakeFiles/main.dir/src/Player.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Player.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damiano/Games/RLG/src/Player.cpp -o CMakeFiles/main.dir/src/Player.cpp.s
-
-CMakeFiles/main.dir/src/Player.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.dir/src/Player.cpp.o.requires
-
-CMakeFiles/main.dir/src/Player.cpp.o.provides: CMakeFiles/main.dir/src/Player.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Player.cpp.o.provides.build
-.PHONY : CMakeFiles/main.dir/src/Player.cpp.o.provides
-
-CMakeFiles/main.dir/src/Player.cpp.o.provides.build: CMakeFiles/main.dir/src/Player.cpp.o
-
-
-CMakeFiles/main.dir/src/Pos.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Pos.cpp.o: ../src/Pos.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/Pos.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/Pos.cpp.o -c /home/damiano/Games/RLG/src/Pos.cpp
-
-CMakeFiles/main.dir/src/Pos.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Pos.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damiano/Games/RLG/src/Pos.cpp > CMakeFiles/main.dir/src/Pos.cpp.i
-
-CMakeFiles/main.dir/src/Pos.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Pos.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damiano/Games/RLG/src/Pos.cpp -o CMakeFiles/main.dir/src/Pos.cpp.s
-
-CMakeFiles/main.dir/src/Pos.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.dir/src/Pos.cpp.o.requires
-
-CMakeFiles/main.dir/src/Pos.cpp.o.provides: CMakeFiles/main.dir/src/Pos.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Pos.cpp.o.provides.build
-.PHONY : CMakeFiles/main.dir/src/Pos.cpp.o.provides
-
-CMakeFiles/main.dir/src/Pos.cpp.o.provides.build: CMakeFiles/main.dir/src/Pos.cpp.o
-
-
-CMakeFiles/main.dir/src/Size.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Size.cpp.o: ../src/Size.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/Size.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/Size.cpp.o -c /home/damiano/Games/RLG/src/Size.cpp
-
-CMakeFiles/main.dir/src/Size.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Size.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damiano/Games/RLG/src/Size.cpp > CMakeFiles/main.dir/src/Size.cpp.i
-
-CMakeFiles/main.dir/src/Size.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Size.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damiano/Games/RLG/src/Size.cpp -o CMakeFiles/main.dir/src/Size.cpp.s
-
-CMakeFiles/main.dir/src/Size.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.dir/src/Size.cpp.o.requires
-
-CMakeFiles/main.dir/src/Size.cpp.o.provides: CMakeFiles/main.dir/src/Size.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Size.cpp.o.provides.build
-.PHONY : CMakeFiles/main.dir/src/Size.cpp.o.provides
-
-CMakeFiles/main.dir/src/Size.cpp.o.provides.build: CMakeFiles/main.dir/src/Size.cpp.o
-
-
 CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/main.cpp.o -c /home/damiano/Games/RLG/src/main.cpp
 
 CMakeFiles/main.dir/src/main.cpp.i: cmake_force
@@ -201,29 +129,50 @@ CMakeFiles/main.dir/src/main.cpp.o.provides: CMakeFiles/main.dir/src/main.cpp.o.
 CMakeFiles/main.dir/src/main.cpp.o.provides.build: CMakeFiles/main.dir/src/main.cpp.o
 
 
+CMakeFiles/main.dir/src/Player.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/Player.cpp.o: ../src/Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/Player.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/Player.cpp.o -c /home/damiano/Games/RLG/src/Player.cpp
+
+CMakeFiles/main.dir/src/Player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Player.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damiano/Games/RLG/src/Player.cpp > CMakeFiles/main.dir/src/Player.cpp.i
+
+CMakeFiles/main.dir/src/Player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Player.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damiano/Games/RLG/src/Player.cpp -o CMakeFiles/main.dir/src/Player.cpp.s
+
+CMakeFiles/main.dir/src/Player.cpp.o.requires:
+
+.PHONY : CMakeFiles/main.dir/src/Player.cpp.o.requires
+
+CMakeFiles/main.dir/src/Player.cpp.o.provides: CMakeFiles/main.dir/src/Player.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Player.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/src/Player.cpp.o.provides
+
+CMakeFiles/main.dir/src/Player.cpp.o.provides.build: CMakeFiles/main.dir/src/Player.cpp.o
+
+
 # Object files for target main
 main_OBJECTS = \
+"CMakeFiles/main.dir/src/Map.cpp.o" \
 "CMakeFiles/main.dir/src/GameManager.cpp.o" \
-"CMakeFiles/main.dir/src/Node.cpp.o" \
-"CMakeFiles/main.dir/src/Player.cpp.o" \
-"CMakeFiles/main.dir/src/Pos.cpp.o" \
-"CMakeFiles/main.dir/src/Size.cpp.o" \
-"CMakeFiles/main.dir/src/main.cpp.o"
+"CMakeFiles/main.dir/src/main.cpp.o" \
+"CMakeFiles/main.dir/src/Player.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
+main: CMakeFiles/main.dir/src/Map.cpp.o
 main: CMakeFiles/main.dir/src/GameManager.cpp.o
-main: CMakeFiles/main.dir/src/Node.cpp.o
-main: CMakeFiles/main.dir/src/Player.cpp.o
-main: CMakeFiles/main.dir/src/Pos.cpp.o
-main: CMakeFiles/main.dir/src/Size.cpp.o
 main: CMakeFiles/main.dir/src/main.cpp.o
+main: CMakeFiles/main.dir/src/Player.cpp.o
 main: CMakeFiles/main.dir/build.make
+main: jalb/libjalb.a
 main: /usr/lib/x86_64-linux-gnu/libcurses.so
 main: /usr/lib/x86_64-linux-gnu/libform.so
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -231,12 +180,10 @@ CMakeFiles/main.dir/build: main
 
 .PHONY : CMakeFiles/main.dir/build
 
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/Map.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/GameManager.cpp.o.requires
-CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/Node.cpp.o.requires
-CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/Player.cpp.o.requires
-CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/Pos.cpp.o.requires
-CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/Size.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/main.cpp.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/Player.cpp.o.requires
 
 .PHONY : CMakeFiles/main.dir/requires
 

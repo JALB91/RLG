@@ -1,8 +1,9 @@
 #include "Node.h"
-#include "Const.h"
+#include "Director.h"
 #include <algorithm>
 #include <assert.h>
 
+NS_JALB_BEGIN
 
 Node* Node::create()
 {
@@ -213,8 +214,12 @@ void Node::removeChildByTag(int tag)
 }
 
 
+void Node::scheduleUpdate()
+{
+    Director::getInstance()->schedule(std::bind(&Node::update, this, std::placeholders::_1), this, "update");
+}
 
-
+NS_JALB_END
 
 
 

@@ -178,10 +178,28 @@ CURSES_INCLUDE_PATH:PATH=/usr/include
 CURSES_NCURSES_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libncurses.so
 
 //Value Computed by CMake
+JALB_BINARY_DIR:STATIC=/home/damiano/Games/RLG/build/jalb
+
+//Value Computed by CMake
+JALB_SOURCE_DIR:STATIC=/home/damiano/Games/RLG/jalb
+
+//Value Computed by CMake
 RLG_BINARY_DIR:STATIC=/home/damiano/Games/RLG/build
 
 //Value Computed by CMake
 RLG_SOURCE_DIR:STATIC=/home/damiano/Games/RLG
+
+//Value Computed by CMake
+jalb_BINARY_DIR:STATIC=/home/damiano/Games/RLG/build/jalb
+
+//The directory containing a CMake configuration file for jalb.
+jalb_DIR:PATH=jalb_DIR-NOTFOUND
+
+//Dependencies for the target
+jalb_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libcurses.so;general;/usr/lib/x86_64-linux-gnu/libform.so;
+
+//Value Computed by CMake
+jalb_SOURCE_DIR:STATIC=/home/damiano/Games/RLG/jalb
 
 
 ########################
@@ -274,7 +292,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

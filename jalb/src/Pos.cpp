@@ -1,5 +1,6 @@
 #include "Pos.h"
 
+NS_JALB_BEGIN
 
 Pos::Pos(const Pos &p)
 {
@@ -30,30 +31,37 @@ bool Pos::operator==(const Pos& p) const
     return (this->x == p.x && this->y == p.y);
 }
 
-template<> Pos& Pos::operator+=(const Pos& p)
+bool Pos::operator!=(const Pos& p) const
+{
+    return !(*this == p);
+}
+
+Pos& Pos::operator+=(const Pos& p)
 {
     this->x += p.x;
     this->y += p.y;
     return *this;
 }
 
-template<> Pos& Pos::operator-=(const Pos& p)
+Pos& Pos::operator-=(const Pos& p)
 {
     this->x -= p.x;
     this->y -= p.y;
     return *this;
 }
 
-template<> Pos& Pos::operator*=(const Pos& p)
+Pos& Pos::operator*=(const Pos& p)
 {
     this->x *= p.x;
     this->y *= p.y;
     return *this;
 }
 
-template<> Pos& Pos::operator/=(const Pos& p)
+Pos& Pos::operator/=(const Pos& p)
 {
     this->x /= p.x;
     this->y /= p.y;
     return *this;
 }
+
+NS_JALB_END
