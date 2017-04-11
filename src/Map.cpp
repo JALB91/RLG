@@ -113,13 +113,18 @@ void Map::findPath(Pos start)
     }
 }
 
-void Map::drawPath(Pos from)
+void Map::drawPath(Pos from, Pos to)
 {
     _path.clear();
 
+    if (to != dest)
+    {
+        findPath(to);
+    }
+
     Pos next = from;
 
-    while(came_from.count(next) && next != dest)
+    while (came_from.count(next) && next != dest)
     {
         _path[next] = 'O';
 
@@ -134,16 +139,15 @@ void Map::draw(WINDOW* win)
 
     for (auto i = _map.begin(); i != _map.end(); i++)
     {
-        Pos p = i->first;
+        Pos p1 = i->first;
+        Pos p2 = this->transformToWorldPos(p1 + getPosition());
         char ch = i->second;
 
-        p += getPosition();
+        mvwaddch(win, p2.y, p2.x, ch);
 
-        mvwaddch(win, p.y * ROW_SIZE, p.x * COL_SIZE, ch);
-
-        if (_path.count(p))
+        if (_path.count(p1))
         {
-            mvwaddch(win, p.y * ROW_SIZE, p.x * COL_SIZE, _path[p]);
+            mvwaddch(win, p2.y, p2.x, _path[p1]);
         }
     }
 }

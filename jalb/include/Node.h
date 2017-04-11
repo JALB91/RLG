@@ -46,6 +46,9 @@ class Node
 	    void setPositionX(int x);
 	    void setPositionY(int y);
 
+        Pos transformToNodePos(Pos p);
+        Pos transformToWorldPos(Pos p);
+
 
         Size getContentSize() const;
 

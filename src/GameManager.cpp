@@ -63,7 +63,7 @@ void GameManager::update(float delta)
 
     box(win, 0, 0);
 
-    gameMap->drawPath(player->getPosition());
+    gameMap->drawPath(player->getPosition(), Pos(10, 10));
 
     draw(win);
 

@@ -130,6 +130,20 @@ void Node::setPositionY(int y)
     this->setPosition(Pos(_position.x, y));
 }
 
+Pos Node::transformToNodePos(Pos p)
+{
+    p = Pos(p.x / COL_SIZE, p.y / ROW_SIZE);
+
+    return p;
+}
+
+Pos Node::transformToWorldPos(Pos p)
+{
+    p = Pos(p.x * COL_SIZE, p.y * ROW_SIZE);
+
+    return p;
+}
+
 
 Size Node::getContentSize() const
 {

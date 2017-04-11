@@ -43,7 +43,9 @@ void Player::draw(WINDOW* win)
 {
     Node::draw(win);
 
-    mvwaddch(win, _position.y * ROW_SIZE, _position.x * COL_SIZE, '@');
+    Pos p = this->transformToWorldPos(_position);
+
+    mvwaddch(win, p.y, p.x, '@');
 }
 
 

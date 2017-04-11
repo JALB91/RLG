@@ -89,8 +89,6 @@ include/Size.h
 /home/damiano/Games/RLG/src/GameManager.cpp
 GameManager.h
 /home/damiano/Games/RLG/src/GameManager.h
-algorithm
--
 
 /home/damiano/Games/RLG/src/Map.cpp
 Map.h
