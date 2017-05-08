@@ -6,11 +6,11 @@ find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR} include)
 
 set(JALB_SOURCES 
-    jalb.cpp
     src/Node.cpp
     src/Director.cpp
     src/Pos.cpp
-    src/Size.cpp)
+    src/Size.cpp
+    src/Utils.cpp)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall  -lncurses")

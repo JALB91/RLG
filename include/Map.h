@@ -22,7 +22,7 @@ class Map: public Node
         bool isWall(Pos p) { return _map[p] == 'w'; };
 
         void findPath(Pos start);
-        void drawPath(Pos from, Pos to);
+        void drawPath(Node* from, Pos to);
 
         void draw(WINDOW* win) override;
 

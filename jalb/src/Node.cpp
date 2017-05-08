@@ -32,7 +32,7 @@ Node::Node()
     _z_ord = 0;
     _tag = 0;
 
-    _position = Pos(1, 1);
+    _position = Pos(0, 0);
     _contentSize = Size(0, 0);
 
     _parent = nullptr;
@@ -130,20 +130,24 @@ void Node::setPositionY(int y)
     this->setPosition(Pos(_position.x, y));
 }
 
-Pos Node::transformToNodePos(Pos p)
+Pos Node::transformToNodePos(Node* node)
 {
-    p = Pos(p.x / COL_SIZE, p.y / ROW_SIZE);
+    if (!getParent() || !node->getParent())
+    {
+        return Pos(0, 0);
+    }
 
-    return p;
+    Pos nodePos = node->getPosition();
+    Node* curr = node;
+
+    while (curr->getParent() != getParent())
+    {
+        curr = curr->getParent();
+        nodePos -= curr->getPosition(); 
+    }
+
+    return nodePos + getPosition();
 }
-
-Pos Node::transformToWorldPos(Pos p)
-{
-    p = Pos(p.x * COL_SIZE, p.y * ROW_SIZE);
-
-    return p;
-}
-
 
 Size Node::getContentSize() const
 {
@@ -234,15 +238,3 @@ void Node::scheduleUpdate()
 }
 
 NS_JALB_END
-
-
-
-
-
-
-
-
-
-
-
-

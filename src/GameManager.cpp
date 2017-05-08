@@ -39,16 +39,15 @@ bool GameManager::init()
     int winWidth = 30 * COL_SIZE;
     int winHeight = 30 * ROW_SIZE;
 
-    win = newwin(winHeight, winWidth, visibleCenter.y - winHeight * 0.5, visibleCenter.x - winWidth * 0.5);
+    win = newwin(winHeight, winWidth, visibleCenter.y - winHeight * 0.5f, visibleCenter.x - winWidth * 0.5f);
     keypad(win, TRUE);
 
     gameMap = Map::create(Size(28, 28));
     gameMap->setPosition(1, 1);
-    gameMap->findPath(Pos(20, 11));
     addChild(gameMap);
 
     player = Player::create();
-    addChild(player);
+    gameMap->addChild(player);
 
     scheduleUpdate();
 
@@ -63,9 +62,9 @@ void GameManager::update(float delta)
 
     box(win, 0, 0);
 
-    gameMap->drawPath(player->getPosition(), Pos(10, 10));
+    gameMap->drawPath(player, Pos(10, 10));
 
-    draw(win);
+    this->draw(win);
 
     refresh();
     wrefresh(win);

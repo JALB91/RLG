@@ -72,6 +72,12 @@ Node.h
 Macros.h
 ../jalb/include/Macros.h
 
+../jalb/include/Utils.h
+Pos.h
+../jalb/include/Pos.h
+Node.h
+../jalb/include/Node.h
+
 ../jalb/jalb.h
 ncurses.h
 ../jalb/ncurses.h
@@ -85,6 +91,8 @@ include/Node.h
 ../jalb/include/Node.h
 include/Size.h
 ../jalb/include/Size.h
+include/Utils.h
+../jalb/include/Utils.h
 
 /home/damiano/Games/RLG/src/GameManager.cpp
 GameManager.h

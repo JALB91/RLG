@@ -46,11 +46,11 @@ bool Map::init()
 
 void Map::findPath(Pos start)
 {
-    queue<Pos> frontier;
-    frontier.push(start);
-
     if (isValidPos(start))
     {
+        queue<Pos> frontier;
+        frontier.push(start);
+
         dest = start;
 
         came_from.clear();
@@ -76,7 +76,7 @@ void Map::findPath(Pos start)
         return;
     }
 
-    _map[start] = 'A';
+    _map[dest] = 'A';
 
     for (int y = 0; y < mapSize.height; y++)
     {
@@ -113,7 +113,7 @@ void Map::findPath(Pos start)
     }
 }
 
-void Map::drawPath(Pos from, Pos to)
+void Map::drawPath(Node* from, Pos to)
 {
     _path.clear();
 
@@ -122,9 +122,9 @@ void Map::drawPath(Pos from, Pos to)
         findPath(to);
     }
 
-    Pos next = from;
+    Pos next = from->getPosition();
 
-    while (came_from.count(next) && next != dest)
+    while (came_from.count(next) && next != to)
     {
         _path[next] = 'O';
 
@@ -135,21 +135,17 @@ void Map::drawPath(Pos from, Pos to)
 
 void Map::draw(WINDOW* win)
 {
-    Node::draw(win);
-
     for (auto i = _map.begin(); i != _map.end(); i++)
     {
         Pos p1 = i->first;
-        Pos p2 = this->transformToWorldPos(p1 + getPosition());
+        Pos p2 = Utils::nodeToGamePos(this, p1);
+        p2 = Utils::gameToWorldPos(p2);
         char ch = i->second;
 
-        mvwaddch(win, p2.y, p2.x, ch);
-
-        if (_path.count(p1))
-        {
-            mvwaddch(win, p2.y, p2.x, _path[p1]);
-        }
+        mvwaddch(win, p2.y, p2.x, _path.count(p1) ? _path[p1] : ch);
     }
+
+    Node::draw(win);
 }
 
 

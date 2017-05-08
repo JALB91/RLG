@@ -8,5 +8,6 @@
 #include "include/Pos.h"
 #include "include/Node.h"
 #include "include/Size.h"
+#include "include/Utils.h"
 
 #endif /* JALB_H */

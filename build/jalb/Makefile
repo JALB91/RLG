@@ -125,33 +125,6 @@ jalb/fast:
 	cd /home/damiano/Games/RLG/build && $(MAKE) -f jalb/CMakeFiles/jalb.dir/build.make jalb/CMakeFiles/jalb.dir/build
 .PHONY : jalb/fast
 
-jalb.o: jalb.cpp.o
-
-.PHONY : jalb.o
-
-# target to build an object file
-jalb.cpp.o:
-	cd /home/damiano/Games/RLG/build && $(MAKE) -f jalb/CMakeFiles/jalb.dir/build.make jalb/CMakeFiles/jalb.dir/jalb.cpp.o
-.PHONY : jalb.cpp.o
-
-jalb.i: jalb.cpp.i
-
-.PHONY : jalb.i
-
-# target to preprocess a source file
-jalb.cpp.i:
-	cd /home/damiano/Games/RLG/build && $(MAKE) -f jalb/CMakeFiles/jalb.dir/build.make jalb/CMakeFiles/jalb.dir/jalb.cpp.i
-.PHONY : jalb.cpp.i
-
-jalb.s: jalb.cpp.s
-
-.PHONY : jalb.s
-
-# target to generate assembly for a file
-jalb.cpp.s:
-	cd /home/damiano/Games/RLG/build && $(MAKE) -f jalb/CMakeFiles/jalb.dir/build.make jalb/CMakeFiles/jalb.dir/jalb.cpp.s
-.PHONY : jalb.cpp.s
-
 src/Director.o: src/Director.cpp.o
 
 .PHONY : src/Director.o
@@ -260,6 +233,33 @@ src/Size.cpp.s:
 	cd /home/damiano/Games/RLG/build && $(MAKE) -f jalb/CMakeFiles/jalb.dir/build.make jalb/CMakeFiles/jalb.dir/src/Size.cpp.s
 .PHONY : src/Size.cpp.s
 
+src/Utils.o: src/Utils.cpp.o
+
+.PHONY : src/Utils.o
+
+# target to build an object file
+src/Utils.cpp.o:
+	cd /home/damiano/Games/RLG/build && $(MAKE) -f jalb/CMakeFiles/jalb.dir/build.make jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o
+.PHONY : src/Utils.cpp.o
+
+src/Utils.i: src/Utils.cpp.i
+
+.PHONY : src/Utils.i
+
+# target to preprocess a source file
+src/Utils.cpp.i:
+	cd /home/damiano/Games/RLG/build && $(MAKE) -f jalb/CMakeFiles/jalb.dir/build.make jalb/CMakeFiles/jalb.dir/src/Utils.cpp.i
+.PHONY : src/Utils.cpp.i
+
+src/Utils.s: src/Utils.cpp.s
+
+.PHONY : src/Utils.s
+
+# target to generate assembly for a file
+src/Utils.cpp.s:
+	cd /home/damiano/Games/RLG/build && $(MAKE) -f jalb/CMakeFiles/jalb.dir/build.make jalb/CMakeFiles/jalb.dir/src/Utils.cpp.s
+.PHONY : src/Utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -269,9 +269,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... jalb"
-	@echo "... jalb.o"
-	@echo "... jalb.i"
-	@echo "... jalb.s"
 	@echo "... src/Director.o"
 	@echo "... src/Director.i"
 	@echo "... src/Director.s"
@@ -284,6 +281,9 @@ help:
 	@echo "... src/Size.o"
 	@echo "... src/Size.i"
 	@echo "... src/Size.s"
+	@echo "... src/Utils.o"
+	@echo "... src/Utils.i"
+	@echo "... src/Utils.s"
 .PHONY : help
 
 

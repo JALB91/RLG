@@ -57,33 +57,9 @@ include jalb/CMakeFiles/jalb.dir/progress.make
 # Include the compile flags for this target's objects.
 include jalb/CMakeFiles/jalb.dir/flags.make
 
-jalb/CMakeFiles/jalb.dir/jalb.cpp.o: jalb/CMakeFiles/jalb.dir/flags.make
-jalb/CMakeFiles/jalb.dir/jalb.cpp.o: ../jalb/jalb.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object jalb/CMakeFiles/jalb.dir/jalb.cpp.o"
-	cd /home/damiano/Games/RLG/build/jalb && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jalb.dir/jalb.cpp.o -c /home/damiano/Games/RLG/jalb/jalb.cpp
-
-jalb/CMakeFiles/jalb.dir/jalb.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jalb.dir/jalb.cpp.i"
-	cd /home/damiano/Games/RLG/build/jalb && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damiano/Games/RLG/jalb/jalb.cpp > CMakeFiles/jalb.dir/jalb.cpp.i
-
-jalb/CMakeFiles/jalb.dir/jalb.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jalb.dir/jalb.cpp.s"
-	cd /home/damiano/Games/RLG/build/jalb && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damiano/Games/RLG/jalb/jalb.cpp -o CMakeFiles/jalb.dir/jalb.cpp.s
-
-jalb/CMakeFiles/jalb.dir/jalb.cpp.o.requires:
-
-.PHONY : jalb/CMakeFiles/jalb.dir/jalb.cpp.o.requires
-
-jalb/CMakeFiles/jalb.dir/jalb.cpp.o.provides: jalb/CMakeFiles/jalb.dir/jalb.cpp.o.requires
-	$(MAKE) -f jalb/CMakeFiles/jalb.dir/build.make jalb/CMakeFiles/jalb.dir/jalb.cpp.o.provides.build
-.PHONY : jalb/CMakeFiles/jalb.dir/jalb.cpp.o.provides
-
-jalb/CMakeFiles/jalb.dir/jalb.cpp.o.provides.build: jalb/CMakeFiles/jalb.dir/jalb.cpp.o
-
-
 jalb/CMakeFiles/jalb.dir/src/Node.cpp.o: jalb/CMakeFiles/jalb.dir/flags.make
 jalb/CMakeFiles/jalb.dir/src/Node.cpp.o: ../jalb/src/Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object jalb/CMakeFiles/jalb.dir/src/Node.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object jalb/CMakeFiles/jalb.dir/src/Node.cpp.o"
 	cd /home/damiano/Games/RLG/build/jalb && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jalb.dir/src/Node.cpp.o -c /home/damiano/Games/RLG/jalb/src/Node.cpp
 
 jalb/CMakeFiles/jalb.dir/src/Node.cpp.i: cmake_force
@@ -107,7 +83,7 @@ jalb/CMakeFiles/jalb.dir/src/Node.cpp.o.provides.build: jalb/CMakeFiles/jalb.dir
 
 jalb/CMakeFiles/jalb.dir/src/Director.cpp.o: jalb/CMakeFiles/jalb.dir/flags.make
 jalb/CMakeFiles/jalb.dir/src/Director.cpp.o: ../jalb/src/Director.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object jalb/CMakeFiles/jalb.dir/src/Director.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object jalb/CMakeFiles/jalb.dir/src/Director.cpp.o"
 	cd /home/damiano/Games/RLG/build/jalb && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jalb.dir/src/Director.cpp.o -c /home/damiano/Games/RLG/jalb/src/Director.cpp
 
 jalb/CMakeFiles/jalb.dir/src/Director.cpp.i: cmake_force
@@ -131,7 +107,7 @@ jalb/CMakeFiles/jalb.dir/src/Director.cpp.o.provides.build: jalb/CMakeFiles/jalb
 
 jalb/CMakeFiles/jalb.dir/src/Pos.cpp.o: jalb/CMakeFiles/jalb.dir/flags.make
 jalb/CMakeFiles/jalb.dir/src/Pos.cpp.o: ../jalb/src/Pos.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object jalb/CMakeFiles/jalb.dir/src/Pos.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object jalb/CMakeFiles/jalb.dir/src/Pos.cpp.o"
 	cd /home/damiano/Games/RLG/build/jalb && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jalb.dir/src/Pos.cpp.o -c /home/damiano/Games/RLG/jalb/src/Pos.cpp
 
 jalb/CMakeFiles/jalb.dir/src/Pos.cpp.i: cmake_force
@@ -155,7 +131,7 @@ jalb/CMakeFiles/jalb.dir/src/Pos.cpp.o.provides.build: jalb/CMakeFiles/jalb.dir/
 
 jalb/CMakeFiles/jalb.dir/src/Size.cpp.o: jalb/CMakeFiles/jalb.dir/flags.make
 jalb/CMakeFiles/jalb.dir/src/Size.cpp.o: ../jalb/src/Size.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object jalb/CMakeFiles/jalb.dir/src/Size.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object jalb/CMakeFiles/jalb.dir/src/Size.cpp.o"
 	cd /home/damiano/Games/RLG/build/jalb && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jalb.dir/src/Size.cpp.o -c /home/damiano/Games/RLG/jalb/src/Size.cpp
 
 jalb/CMakeFiles/jalb.dir/src/Size.cpp.i: cmake_force
@@ -177,22 +153,46 @@ jalb/CMakeFiles/jalb.dir/src/Size.cpp.o.provides: jalb/CMakeFiles/jalb.dir/src/S
 jalb/CMakeFiles/jalb.dir/src/Size.cpp.o.provides.build: jalb/CMakeFiles/jalb.dir/src/Size.cpp.o
 
 
+jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o: jalb/CMakeFiles/jalb.dir/flags.make
+jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o: ../jalb/src/Utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o"
+	cd /home/damiano/Games/RLG/build/jalb && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jalb.dir/src/Utils.cpp.o -c /home/damiano/Games/RLG/jalb/src/Utils.cpp
+
+jalb/CMakeFiles/jalb.dir/src/Utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jalb.dir/src/Utils.cpp.i"
+	cd /home/damiano/Games/RLG/build/jalb && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damiano/Games/RLG/jalb/src/Utils.cpp > CMakeFiles/jalb.dir/src/Utils.cpp.i
+
+jalb/CMakeFiles/jalb.dir/src/Utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jalb.dir/src/Utils.cpp.s"
+	cd /home/damiano/Games/RLG/build/jalb && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damiano/Games/RLG/jalb/src/Utils.cpp -o CMakeFiles/jalb.dir/src/Utils.cpp.s
+
+jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o.requires:
+
+.PHONY : jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o.requires
+
+jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o.provides: jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o.requires
+	$(MAKE) -f jalb/CMakeFiles/jalb.dir/build.make jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o.provides.build
+.PHONY : jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o.provides
+
+jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o.provides.build: jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o
+
+
 # Object files for target jalb
 jalb_OBJECTS = \
-"CMakeFiles/jalb.dir/jalb.cpp.o" \
 "CMakeFiles/jalb.dir/src/Node.cpp.o" \
 "CMakeFiles/jalb.dir/src/Director.cpp.o" \
 "CMakeFiles/jalb.dir/src/Pos.cpp.o" \
-"CMakeFiles/jalb.dir/src/Size.cpp.o"
+"CMakeFiles/jalb.dir/src/Size.cpp.o" \
+"CMakeFiles/jalb.dir/src/Utils.cpp.o"
 
 # External object files for target jalb
 jalb_EXTERNAL_OBJECTS =
 
-jalb/libjalb.a: jalb/CMakeFiles/jalb.dir/jalb.cpp.o
 jalb/libjalb.a: jalb/CMakeFiles/jalb.dir/src/Node.cpp.o
 jalb/libjalb.a: jalb/CMakeFiles/jalb.dir/src/Director.cpp.o
 jalb/libjalb.a: jalb/CMakeFiles/jalb.dir/src/Pos.cpp.o
 jalb/libjalb.a: jalb/CMakeFiles/jalb.dir/src/Size.cpp.o
+jalb/libjalb.a: jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o
 jalb/libjalb.a: jalb/CMakeFiles/jalb.dir/build.make
 jalb/libjalb.a: jalb/CMakeFiles/jalb.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/damiano/Games/RLG/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libjalb.a"
@@ -204,11 +204,11 @@ jalb/CMakeFiles/jalb.dir/build: jalb/libjalb.a
 
 .PHONY : jalb/CMakeFiles/jalb.dir/build
 
-jalb/CMakeFiles/jalb.dir/requires: jalb/CMakeFiles/jalb.dir/jalb.cpp.o.requires
 jalb/CMakeFiles/jalb.dir/requires: jalb/CMakeFiles/jalb.dir/src/Node.cpp.o.requires
 jalb/CMakeFiles/jalb.dir/requires: jalb/CMakeFiles/jalb.dir/src/Director.cpp.o.requires
 jalb/CMakeFiles/jalb.dir/requires: jalb/CMakeFiles/jalb.dir/src/Pos.cpp.o.requires
 jalb/CMakeFiles/jalb.dir/requires: jalb/CMakeFiles/jalb.dir/src/Size.cpp.o.requires
+jalb/CMakeFiles/jalb.dir/requires: jalb/CMakeFiles/jalb.dir/src/Utils.cpp.o.requires
 
 .PHONY : jalb/CMakeFiles/jalb.dir/requires
 

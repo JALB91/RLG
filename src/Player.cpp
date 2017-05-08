@@ -41,11 +41,12 @@ Player::~Player()
 
 void Player::draw(WINDOW* win)
 {
-    Node::draw(win);
-
-    Pos p = this->transformToWorldPos(_position);
+    Pos p = Utils::nodeToGamePos(this, Pos(0, 0));
+    p = Utils::gameToWorldPos(p);
 
     mvwaddch(win, p.y, p.x, '@');
+    
+    Node::draw(win);
 }
 
 
@@ -56,22 +57,22 @@ void Player::handleInput(int ch)
         case 'w':
         case 'W':
         case KEY_UP:
-            _position.y--;
+            setPositionY(getPositionY() - 1);
             break;
         case 's':
         case 'S':
         case KEY_DOWN:
-            _position.y++;
+            setPositionY(getPositionY() + 1);
             break;
         case 'd':
         case 'D':
         case KEY_RIGHT:
-            _position.x++;
+            setPositionX(getPositionX() + 1);
             break;
         case 'a':
         case 'A':
         case KEY_LEFT:
-            _position.x--;
+            setPositionX(getPositionX() - 1);
             break;
         default:
             break;
