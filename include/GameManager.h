@@ -13,11 +13,14 @@ class GameManager: public Node
     public:
         static GameManager* getInstance();
 
-        inline WINDOW* getWindow() const { return win; };
+        inline WINDOW* getGameWindow() const { return gameWin; };
+        inline WINDOW* getUIWindow() const { return uiWin; };
         inline Map* getMap() const { return gameMap; };
         inline Player* getPlayer() const { return player; };
 
         inline bool canMoveTo(const Pos& p) const { return gameMap->isFree(p); };
+
+        void handleInteractions(const Pos& p);
 
     protected:
         GameManager();
@@ -32,7 +35,8 @@ class GameManager: public Node
 
         float time;
 
-        WINDOW* win;
+        WINDOW* gameWin;
+        WINDOW* uiWin;
         Map* gameMap;
         Player* player;
 };

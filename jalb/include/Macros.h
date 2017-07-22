@@ -10,7 +10,7 @@
 #define COL_SIZE 2
 #define ROW_SIZE 1
 
-#define visibleSize Pos(COLS - 1, LINES - 1)
+#define visibleSize Size(COLS - 1, LINES - 1)
 #define visibleCenter Pos(visibleSize * 0.5)
 
 #endif /* JALB_H */

@@ -75,6 +75,10 @@ void Player::handleInput(const int ch)
         case KEY_LEFT:
             moveTo(getPosition() + Pos(-1, 0));
             break;
+        case 'e':
+        case 'E':
+            interact(getPosition());
+            break;
         default:
             break;
     }
@@ -87,4 +91,9 @@ void Player::moveTo(const Pos& p)
     {
         setPosition(p);
     }
+}
+
+void Player::interact(const Pos& p)
+{
+    GameManager::getInstance()->handleInteractions(p);
 }

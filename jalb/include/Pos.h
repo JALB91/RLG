@@ -9,12 +9,16 @@ using namespace std;
 
 NS_JALB_BEGIN
 
+class Size;
+
 class Pos
 {
     public:
-        Pos(const Pos &p);
+        Pos(const Pos& p);
         Pos(int x, int y);
         Pos();
+
+        Pos(const Size& s);
 
         ~Pos();
 

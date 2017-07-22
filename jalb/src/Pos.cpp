@@ -1,24 +1,29 @@
 #include "Pos.h"
+#include "Size.h"
 
 NS_JALB_BEGIN
 
-Pos::Pos(const Pos &p)
+Pos::Pos(int x, int y) : x(x), y(y)
 {
-    this->x = p.x;
-    this->y = p.y;
+    
 }
 
-Pos::Pos(int x, int y)
+Pos::Pos(const Pos &p) : Pos(p.x, p.y)
 {
-    this->x = x;
-    this->y = y;
+
 }
 
-Pos::Pos()
+Pos::Pos() : Pos(0, 0)
 {
-    this->x = 0;
-    this->y = 0;
+    
 }
+
+
+Pos::Pos(const Size& s) : Pos(s.width, s.height)
+{
+
+}
+
 
 Pos::~Pos()
 {

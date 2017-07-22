@@ -14,6 +14,7 @@ class Player : public Node
         void handleInput(const int ch);
 
         void moveTo(const Pos& p);
+        void interact(const Pos& p);
 
     protected:
         Player();

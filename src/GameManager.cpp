@@ -39,8 +39,10 @@ bool GameManager::init()
     int winWidth = 30 * COL_SIZE;
     int winHeight = 30 * ROW_SIZE;
 
-    win = newwin(winHeight, winWidth, visibleCenter.y - winHeight * 0.5f, visibleCenter.x - winWidth * 0.5f);
-    keypad(win, TRUE);
+    gameWin = newwin(winHeight, winWidth, 1, visibleCenter.x - winWidth * 0.5f);
+    keypad(gameWin, TRUE);
+
+    uiWin = newwin(5, visibleSize.width - 2, visibleSize.height - 5x, 1);
 
     gameMap = Map::create(Size(28, 28));
     
@@ -61,19 +63,28 @@ bool GameManager::init()
 }
 
 
+void GameManager::handleInteractions(const Pos& p)
+{
+
+}
+
+
 void GameManager::update(float delta)
 {
-    wclear(win);
+    wclear(gameWin);
+    wclear(uiWin);
     mvprintw(0, 0, "TIME: %d", (int)time);
 
-    box(win, 0, 0);
+    box(gameWin, 0, 0);
+    box(uiWin, 0, 0);
 
     gameMap->drawPath(player, Pos(10, 10));
 
-    this->draw(win);
+    this->draw(gameWin);
 
     refresh();
-    wrefresh(win);
+    wrefresh(gameWin);
+    wrefresh(uiWin);
 
     time += delta;
 }
