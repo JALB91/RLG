@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -56,29 +56,29 @@ Pos.h
 Node.h
 ../jalb/include/Node.h
 
-/home/damiano/Games/RLG/jalb/src/Director.cpp
+/home/damio/Documents/dev/RLG/jalb/src/Director.cpp
 Director.h
-/home/damiano/Games/RLG/jalb/src/Director.h
+/home/damio/Documents/dev/RLG/jalb/src/Director.h
 
-/home/damiano/Games/RLG/jalb/src/Node.cpp
+/home/damio/Documents/dev/RLG/jalb/src/Node.cpp
 Node.h
-/home/damiano/Games/RLG/jalb/src/Node.h
+/home/damio/Documents/dev/RLG/jalb/src/Node.h
 Director.h
-/home/damiano/Games/RLG/jalb/src/Director.h
+/home/damio/Documents/dev/RLG/jalb/src/Director.h
 algorithm
 -
 assert.h
 -
 
-/home/damiano/Games/RLG/jalb/src/Pos.cpp
+/home/damio/Documents/dev/RLG/jalb/src/Pos.cpp
 Pos.h
-/home/damiano/Games/RLG/jalb/src/Pos.h
+/home/damio/Documents/dev/RLG/jalb/src/Pos.h
 
-/home/damiano/Games/RLG/jalb/src/Size.cpp
+/home/damio/Documents/dev/RLG/jalb/src/Size.cpp
 Size.h
-/home/damiano/Games/RLG/jalb/src/Size.h
+/home/damio/Documents/dev/RLG/jalb/src/Size.h
 
-/home/damiano/Games/RLG/jalb/src/Utils.cpp
+/home/damio/Documents/dev/RLG/jalb/src/Utils.cpp
 Utils.h
-/home/damiano/Games/RLG/jalb/src/Utils.h
+/home/damio/Documents/dev/RLG/jalb/src/Utils.h
 

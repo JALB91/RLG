@@ -16,10 +16,12 @@ class Map: public Node
 
         static Map* create(Size size);
 
-        bool isPos(Pos p) { return _map.find(p) != _map.end(); }
-        bool isValidPos(Pos p) { return (isPos(p) && isFree(p)); }
-        bool isFree(Pos p) { return _map[p] == ' '; };
-        bool isWall(Pos p) { return _map[p] == 'w'; };
+        inline bool isPos(const Pos& p) const { return _map.find(p) != _map.end(); };
+        inline bool isFree(const Pos& p) const { return isPos(p) && _map.find(p)->second == ' '; };
+        inline bool isWall(const Pos& p) const { return isPos(p) && _map.find(p)->second == 'w'; };
+
+        bool setFree(const Pos& p);
+        bool setWall(const Pos& p);
 
         void findPath(Pos start);
         void drawPath(Node* from, Pos to);

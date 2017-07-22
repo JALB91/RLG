@@ -1,1 +1,1 @@
-/usr/bin/c++    -Wall  -lncurses   -Wall -lncurses CMakeFiles/main.dir/src/Map.cpp.o CMakeFiles/main.dir/src/GameManager.cpp.o CMakeFiles/main.dir/src/main.cpp.o CMakeFiles/main.dir/src/Player.cpp.o  -o main -rdynamic jalb/libjalb.a -lcurses -lform 
+/usr/bin/c++   -Wall  -lncurses   -Wall -lncurses -rdynamic CMakeFiles/main.dir/src/Map.cpp.o CMakeFiles/main.dir/src/GameManager.cpp.o CMakeFiles/main.dir/src/main.cpp.o CMakeFiles/main.dir/src/Player.cpp.o  -o main jalb/libjalb.a -lcurses -lform 

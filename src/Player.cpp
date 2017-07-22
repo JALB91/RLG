@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "GameManager.h"
 
 
 Player* Player::create()
@@ -50,31 +51,40 @@ void Player::draw(WINDOW* win)
 }
 
 
-void Player::handleInput(int ch)
+void Player::handleInput(const int ch)
 {
     switch (ch)
     {
         case 'w':
         case 'W':
         case KEY_UP:
-            setPositionY(getPositionY() - 1);
+            moveTo(getPosition() + Pos(0, -1));
             break;
         case 's':
         case 'S':
         case KEY_DOWN:
-            setPositionY(getPositionY() + 1);
+            moveTo(getPosition() + Pos(0, 1));
             break;
         case 'd':
         case 'D':
         case KEY_RIGHT:
-            setPositionX(getPositionX() + 1);
+            moveTo(getPosition() + Pos(1, 0));
             break;
         case 'a':
         case 'A':
         case KEY_LEFT:
-            setPositionX(getPositionX() - 1);
+            moveTo(getPosition() + Pos(-1, 0));
             break;
         default:
             break;
+    }
+}
+
+
+void Player::moveTo(const Pos& p)
+{
+    if (GameManager::getInstance()->canMoveTo(p))
+    {
+        setPosition(p);
     }
 }

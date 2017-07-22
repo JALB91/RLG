@@ -1,4 +1,5 @@
 #include "Map.h"
+#include "GameConst.h"
 
 array<Pos, 4> Map::DIRS { {Pos(1, 0), Pos(0, - 1), Pos(- 1, 0), Pos(0, 1)} };
 
@@ -44,9 +45,32 @@ bool Map::init()
 }
 
 
+bool Map::setFree(const Pos& p)
+{
+    if (isPos(p) && !isFree(p))
+    {
+        _map[p] = ' ';
+        return true;
+    }
+
+    return false;
+}
+
+bool Map::setWall(const Pos& p)
+{
+    if (isPos(p) && !isWall(p))
+    {
+        _map[p] = 'w';
+        return true;
+    }
+
+    return false;
+}
+
+
 void Map::findPath(Pos start)
 {
-    if (isValidPos(start))
+    if (!isWall(start))
     {
         queue<Pos> frontier;
         frontier.push(start);
@@ -92,6 +116,7 @@ void Map::findPath(Pos start)
             {
                 Pos to = came_from[curr];
 
+#if DRAW_PATH
                 if (to.x == curr.x + 1)
                 {
                     _map[curr] = '>';
@@ -108,6 +133,7 @@ void Map::findPath(Pos start)
                 {
                     _map[curr] = '^';
                 }
+#endif
             }
         }
     }
@@ -162,7 +188,7 @@ vector<Pos> Map::getNeighbours(Pos pos)
     {
         Pos p(pos.x + v.x, pos.y + v.y);
 
-        if (isValidPos(p))
+        if (isFree(p))
         {
             vec.push_back(p);
         }

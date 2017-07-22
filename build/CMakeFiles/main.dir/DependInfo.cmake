@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/damiano/Games/RLG/src/GameManager.cpp" "/home/damiano/Games/RLG/build/CMakeFiles/main.dir/src/GameManager.cpp.o"
-  "/home/damiano/Games/RLG/src/Map.cpp" "/home/damiano/Games/RLG/build/CMakeFiles/main.dir/src/Map.cpp.o"
-  "/home/damiano/Games/RLG/src/Player.cpp" "/home/damiano/Games/RLG/build/CMakeFiles/main.dir/src/Player.cpp.o"
-  "/home/damiano/Games/RLG/src/main.cpp" "/home/damiano/Games/RLG/build/CMakeFiles/main.dir/src/main.cpp.o"
+  "/home/damio/Documents/dev/RLG/src/GameManager.cpp" "/home/damio/Documents/dev/RLG/build/CMakeFiles/main.dir/src/GameManager.cpp.o"
+  "/home/damio/Documents/dev/RLG/src/Map.cpp" "/home/damio/Documents/dev/RLG/build/CMakeFiles/main.dir/src/Map.cpp.o"
+  "/home/damio/Documents/dev/RLG/src/Player.cpp" "/home/damio/Documents/dev/RLG/build/CMakeFiles/main.dir/src/Player.cpp.o"
+  "/home/damio/Documents/dev/RLG/src/main.cpp" "/home/damio/Documents/dev/RLG/build/CMakeFiles/main.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,7 +19,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/damiano/Games/RLG/build/jalb/CMakeFiles/jalb.dir/DependInfo.cmake"
+  "/home/damio/Documents/dev/RLG/build/jalb/CMakeFiles/jalb.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

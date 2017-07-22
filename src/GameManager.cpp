@@ -43,6 +43,12 @@ bool GameManager::init()
     keypad(win, TRUE);
 
     gameMap = Map::create(Size(28, 28));
+    
+    for (int i = 1; i < 27; i++)
+    {
+        gameMap->setWall(Pos(i, 6));
+    }
+
     gameMap->setPosition(1, 1);
     addChild(gameMap);
 
@@ -58,7 +64,7 @@ bool GameManager::init()
 void GameManager::update(float delta)
 {
     wclear(win);
-    mvprintw(0, 0, "DELTA: %2f", time);
+    mvprintw(0, 0, "TIME: %d", (int)time);
 
     box(win, 0, 0);
 

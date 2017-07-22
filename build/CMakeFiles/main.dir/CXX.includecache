@@ -1,10 +1,12 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
 #IncludeRegexComplain: ^$
 
 #IncludeRegexTransform: 
+
+../include/GameConst.h
 
 ../include/GameManager.h
 jalb.h
@@ -94,21 +96,25 @@ include/Size.h
 include/Utils.h
 ../jalb/include/Utils.h
 
-/home/damiano/Games/RLG/src/GameManager.cpp
+/home/damio/Documents/dev/RLG/src/GameManager.cpp
 GameManager.h
-/home/damiano/Games/RLG/src/GameManager.h
+/home/damio/Documents/dev/RLG/src/GameManager.h
 
-/home/damiano/Games/RLG/src/Map.cpp
+/home/damio/Documents/dev/RLG/src/Map.cpp
 Map.h
-/home/damiano/Games/RLG/src/Map.h
+/home/damio/Documents/dev/RLG/src/Map.h
+GameConst.h
+/home/damio/Documents/dev/RLG/src/GameConst.h
 
-/home/damiano/Games/RLG/src/Player.cpp
+/home/damio/Documents/dev/RLG/src/Player.cpp
 Player.h
-/home/damiano/Games/RLG/src/Player.h
-
-/home/damiano/Games/RLG/src/main.cpp
-jalb.h
-/home/damiano/Games/RLG/src/jalb.h
+/home/damio/Documents/dev/RLG/src/Player.h
 GameManager.h
-/home/damiano/Games/RLG/src/GameManager.h
+/home/damio/Documents/dev/RLG/src/GameManager.h
+
+/home/damio/Documents/dev/RLG/src/main.cpp
+jalb.h
+/home/damio/Documents/dev/RLG/src/jalb.h
+GameManager.h
+/home/damio/Documents/dev/RLG/src/GameManager.h
 

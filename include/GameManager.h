@@ -13,6 +13,12 @@ class GameManager: public Node
     public:
         static GameManager* getInstance();
 
+        inline WINDOW* getWindow() const { return win; };
+        inline Map* getMap() const { return gameMap; };
+        inline Player* getPlayer() const { return player; };
+
+        inline bool canMoveTo(const Pos& p) const { return gameMap->isFree(p); };
+
     protected:
         GameManager();
         virtual ~GameManager();

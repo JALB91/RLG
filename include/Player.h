@@ -11,7 +11,9 @@ class Player : public Node
         static Player* create();
 
         void draw(WINDOW* win) override;
-        void handleInput(int ch);
+        void handleInput(const int ch);
+
+        void moveTo(const Pos& p);
 
     protected:
         Player();
