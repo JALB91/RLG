@@ -42,7 +42,7 @@ bool GameManager::init()
     gameWin = newwin(winHeight, winWidth, 1, visibleCenter.x - winWidth * 0.5f);
     keypad(gameWin, TRUE);
 
-    uiWin = newwin(5, visibleSize.width - 2, visibleSize.height - 5x, 1);
+    uiWin = newwin(5, visibleSize.width - 2, visibleSize.height - 5, 1);
 
     gameMap = Map::create(Size(28, 28));
     
@@ -52,10 +52,19 @@ bool GameManager::init()
     }
 
     gameMap->setPosition(1, 1);
+    gameMap->setWindow(gameWin);
     addChild(gameMap);
 
     player = Player::create();
+    player->setWindow(gameWin);
     gameMap->addChild(player);
+
+    interactionLabel = Label::create();
+    interactionLabel->setWindow(uiWin);
+    interactionLabel->setPosition(visibleCenter.x, 2);
+    addChild(interactionLabel);
+
+    Director::getInstance()->addListener(std::bind(&GameManager::handleInput, this, std::placeholders::_1), this);
 
     scheduleUpdate();
 
@@ -65,7 +74,15 @@ bool GameManager::init()
 
 void GameManager::handleInteractions(const Pos& p)
 {
+    interactionLabel->setText("Interaction!");
+}
 
+void GameManager::handleInput(const int ch)
+{
+    if (ch != 'e' && ch != 'E')
+    {
+        interactionLabel->setText("");
+    }
 }
 
 
@@ -80,7 +97,7 @@ void GameManager::update(float delta)
 
     gameMap->drawPath(player, Pos(10, 10));
 
-    this->draw(gameWin);
+    this->draw();
 
     refresh();
     wrefresh(gameWin);

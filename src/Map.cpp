@@ -152,14 +152,17 @@ void Map::drawPath(Node* from, Pos to)
 
     while (came_from.count(next) && next != to)
     {
-        _path[next] = 'O';
+        if (next != from->getPosition())
+        {
+            _path[next] = 'O';
+        }
 
         next = came_from[next];
     }
 }
 
 
-void Map::draw(WINDOW* win)
+void Map::draw()
 {
     for (auto i = _map.begin(); i != _map.end(); i++)
     {
@@ -168,10 +171,10 @@ void Map::draw(WINDOW* win)
         p2 = Utils::gameToWorldPos(p2);
         char ch = i->second;
 
-        mvwaddch(win, p2.y, p2.x, _path.count(p1) ? _path[p1] : ch);
+        mvwaddch(_win, p2.y, p2.x, _path.count(p1) ? _path[p1] : ch);
     }
 
-    Node::draw(win);
+    Node::draw();
 }
 
 

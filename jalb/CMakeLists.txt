@@ -7,6 +7,7 @@ include_directories(${CURSES_INCLUDE_DIR} include)
 
 set(JALB_SOURCES 
     src/Node.cpp
+    src/Label.cpp
     src/Director.cpp
     src/Pos.cpp
     src/Size.cpp

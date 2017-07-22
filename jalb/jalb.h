@@ -7,6 +7,7 @@
 #include "include/Director.h"
 #include "include/Pos.h"
 #include "include/Node.h"
+#include "include/Label.h"
 #include "include/Size.h"
 #include "include/Utils.h"
 

@@ -10,7 +10,7 @@ class Player : public Node
     public:
         static Player* create();
 
-        void draw(WINDOW* win) override;
+        void draw() override;
         void handleInput(const int ch);
 
         void moveTo(const Pos& p);

@@ -21,6 +21,7 @@ class GameManager: public Node
         inline bool canMoveTo(const Pos& p) const { return gameMap->isFree(p); };
 
         void handleInteractions(const Pos& p);
+        void handleInput(const int ch);
 
     protected:
         GameManager();
@@ -39,6 +40,7 @@ class GameManager: public Node
         WINDOW* uiWin;
         Map* gameMap;
         Player* player;
+        Label* interactionLabel;
 };
 
 #endif /* GAMEMANAGER_H */

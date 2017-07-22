@@ -20,47 +20,51 @@ class Node
         virtual ~Node();
 
 
-        virtual void draw(WINDOW* win);
+        virtual void draw();
 
         virtual void update(float delta);
 
 
-        string getName() const;
-        void setName(string name);
+        inline WINDOW* getWindow() const { return _win; };
+        inline void setWindow(WINDOW* win) { this->_win = win; };
 
 
-        int getZOrd() const;
-        void setZOrd(int z_ord);
+        inline string getName() const { return _name; };
+        inline void setName(const string& name) { this->_name = name; };
 
 
-        int getTag() const;
-        void setTag(int tag);
+        inline int getZOrd() const { return _z_ord; };
+        inline void setZOrd(const int& z_ord) { this->_z_ord = z_ord; };
 
 
-	    Pos getPosition() const;
-	    int getPositionX() const;
-	    int getPositionY() const;
+        inline int getTag() const { return _tag; };
+        inline void setTag(const int& tag) { this->_tag = tag; };
 
-	    virtual void setPosition(Pos p);
-        void setPosition(int x, int y);
-	    void setPositionX(int x);
-	    void setPositionY(int y);
+
+	    inline Pos getPosition() const { return _position; };
+	    inline int getPositionX() const { return _position.x; };
+	    inline int getPositionY() const { return _position.y; };
+
+	    virtual inline void setPosition(const Pos& p) { this->_position = p; };
+        inline void setPosition(const int& x, const int& y) { setPosition(Pos(x, y)); };
+	    inline void setPositionX(const int& x) { setPosition(x, _position.y); };
+	    inline void setPositionY(const int& y) { setPosition(_position.x, y); };
 
         Pos transformToNodePos(Node* node);
 
 
-        Size getContentSize() const;
+        inline Size getContentSize() const { return _contentSize; };
 
-        virtual void setContentSize(Size s);
-        void setContentSize(int w, int h);
-        void setContentSize(int s);
+        virtual inline void setContentSize(const Size& s) { this->_contentSize = s; };
+        inline void setContentSize(int w, int h) { setContentSize(Size(w, h)); };
+        inline void setContentSize(int s) { setContentSize(Size(s)); };
 
 
-        Node* getParent();
+        inline Node* getParent() const { return _parent; };
         void removeFromParent();
 
 
-        vector<Node*> getChildren();
+        inline vector<Node*> getChildren() const { return _children; };
         void addChild(Node* n);
         void addChild(Node* n, int z_ord);
         void removeChild(Node* n);
@@ -73,6 +77,8 @@ class Node
 	    virtual bool init();
 
         void scheduleUpdate();
+
+        WINDOW* _win;
 
         string _name;
 

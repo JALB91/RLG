@@ -1,1 +1,1 @@
-#define SHOW_PATH false
+#define SHOW_PATH true

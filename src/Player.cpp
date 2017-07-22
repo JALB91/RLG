@@ -40,14 +40,14 @@ Player::~Player()
 }
 
 
-void Player::draw(WINDOW* win)
+void Player::draw()
 {
+    Node::draw();
+    
     Pos p = Utils::nodeToGamePos(this, Pos(0, 0));
     p = Utils::gameToWorldPos(p);
 
-    mvwaddch(win, p.y, p.x, '@');
-    
-    Node::draw(win);
+    mvwaddch(_win, p.y, p.x, '@');
 }
 
 

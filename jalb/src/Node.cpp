@@ -44,7 +44,7 @@ Node::~Node()
 }
 
 
-void Node::draw(WINDOW* win)
+void Node::draw()
 {
     sort(_children.begin(), _children.end(), [] (const Node* a, const Node* b) {
 
@@ -53,7 +53,7 @@ void Node::draw(WINDOW* win)
 
    for (Node* node: _children)
    {
-       node->draw(win);
+       node->draw();
    }
 }
 
@@ -62,73 +62,6 @@ void Node::update(float delta)
 
 }
 
-string Node::getName() const
-{
-    return _name;
-}
-
-void Node::setName(string name)
-{
-    this->_name = name;
-}
-
-
-int Node::getZOrd() const
-{
-    return _z_ord;
-}
-
-void Node::setZOrd(int z_ord)
-{
-    this->_z_ord = z_ord;
-}
-
-
-int Node::getTag() const
-{
-    return _tag;
-}
-
-void Node::setTag(int tag)
-{
-    this->_tag = tag;
-}
-
-
-Pos Node::getPosition() const
-{
-	return _position;
-}
-
-int Node::getPositionX() const
-{
-	return _position.x;
-}
-
-int Node::getPositionY() const
-{
-	return _position.y;
-}
-
-void Node::setPosition(Pos p)
-{
-	this->_position = p;
-}
-
-void Node::setPosition(int x, int y)
-{
-    this->setPosition(Pos(x, y));
-}
-
-void Node::setPositionX(int x)
-{
-    this->setPosition(Pos(x, _position.y));
-}
-
-void Node::setPositionY(int y)
-{
-    this->setPosition(Pos(_position.x, y));
-}
 
 Pos Node::transformToNodePos(Node* node)
 {
@@ -149,31 +82,6 @@ Pos Node::transformToNodePos(Node* node)
     return nodePos + getPosition();
 }
 
-Size Node::getContentSize() const
-{
-    return _contentSize;
-}
-
-void Node::setContentSize(Size s)
-{
-    this->_contentSize = s;
-}
-
-void Node::setContentSize(int w, int h)
-{
-    this->setContentSize(Size(w, h));
-}
-
-void Node::setContentSize(int s)
-{
-    this->setContentSize(Size(s));
-}
-
-
-Node* Node::getParent()
-{
-    return _parent;
-}
 
 void Node::removeFromParent()
 {
@@ -182,11 +90,6 @@ void Node::removeFromParent()
     _parent->removeChild(this);
 }
 
-
-vector<Node*> Node::getChildren()
-{
-    return _children;
-}
 
 void Node::addChild(Node* n)
 {

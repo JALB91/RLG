@@ -26,7 +26,7 @@ class Map: public Node
         void findPath(Pos start);
         void drawPath(Node* from, Pos to);
 
-        void draw(WINDOW* win) override;
+        void draw() override;
 
     protected:
         Map(Size size);
