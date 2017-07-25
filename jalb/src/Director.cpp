@@ -14,15 +14,24 @@ Director* Director::getInstance()
     return _instance;
 }
 
-
 Director::Director()
 {
+    initscr();
+
+    mainWin = stdscr;
+
+    keypad(mainWin, TRUE);
+    curs_set(0);
+    noecho();
+    cbreak();
+    refresh();
+
     setFps(TICKRATE);
 }
 
 Director::~Director()
 {
-
+    endwin();
 }
 
 
@@ -39,60 +48,58 @@ void Director::setFps(float fps)
     timeout(_fps);
 }
 
-void Director::schedule(const jFFunc& callback, Node* target, string name)
+
+void Director::addWindow(WINDOW* win)
 {
-    for (auto timer: _timers)
-    {
-        if (timer._target == target)
-        {
-            return;
-        }
-    }
-
-    Timer timer(callback, target, name);
-
-    _timers.push_back(timer);
+    _windows.insert(win);
 }
 
-void Director::unschedule(Node* target)
+void Director::removeWindow(WINDOW* win)
 {
-    for (auto it = _timers.begin(); it != _timers.end(); it++)
+    for (auto it = _windows.begin(); it != _windows.end(); it++)
     {
-        Timer timer = *it;
-
-        if (timer._target == target)
+        if (*it == win)
         {
-            _timers.erase(it);
-            _timers.shrink_to_fit();
-            return;
-        }
-    }
-}
-
-void Director::unschedule(std::string name)
-{
-    for (auto it = _timers.begin(); it != _timers.end(); it++)
-    {
-        Timer timer = *it;
-
-        if (timer._name == name)
-        {
-            _timers.erase(it);
-            _timers.shrink_to_fit();
-            return;
+            _windows.erase(it);
+            break;
         }
     }
 }
 
 
-void Director::addListener(const jIFunc& callback, Node* target)
+void Director::schedulePreUpdate(const jFunc0& callback, Node* target, string name /* "" */)
+{
+    schedule(_preUpdates, callback, target, name);
+}
+
+
+void Director::scheduleUpdate(const jFunc1<float>& callback, Node* target, string name /* "" */)
+{
+    schedule(_updates, callback, target, name);
+}
+
+
+void Director::schedulePostUpdate(const jFunc0& callback, Node* target, string name /* "" */)
+{
+    schedule(_postUpdates, callback, target, name);
+}
+
+
+void Director::addListener(const jFunc1<int>& callback, Node* target, string name /* "" */)
+{
+    schedule(_listeners, callback, target, name);
+}
+
+
+template<typename T>
+void Director::schedule(std::vector<Listener<T>>& vec, const T& callback, Node* target, string name)
 {
     if (!callback || !target)
     {
         return;
     }
 
-    for (auto listener: _listeners)
+    for (auto listener: vec)
     {
         if (listener._target == target)
         {
@@ -100,21 +107,37 @@ void Director::addListener(const jIFunc& callback, Node* target)
         }
     }
 
-    Listener listener(callback, target);
-
-    _listeners.push_back(listener);
+    Listener<T> listener(callback, target, name);
+    vec.push_back(listener);
 }
 
-void Director::removeListener(Node* target)
+template<typename T>
+void Director::unschedule(std::vector<Listener<T>>& vec, Node* target)
 {
-    for (auto it = _listeners.begin(); it != _listeners.end(); it++)
+    for (auto it = vec.begin(); it != vec.end(); it++)
     {
-        Listener listener = *it;
+        Listener<T> listener = *it;
 
         if (listener._target == target)
         {
-            _listeners.erase(it);
-            _listeners.shrink_to_fit();
+            vec.erase(it);
+            vec.shrink_to_fit();
+            return;
+        }
+    }
+}
+
+template<typename T>
+void Director::unschedule(std::vector<Listener<T>>& vec, string name)
+{
+    for (auto it = vec.begin(); it != vec.end(); it++)
+    {
+        Listener<T> listener = *it;
+
+        if (listener._name == name)
+        {
+            vec.erase(it);
+            vec.shrink_to_fit();
             return;
         }
     }
@@ -123,26 +146,59 @@ void Director::removeListener(Node* target)
 
 void Director::mainLoop()
 {
-    int ch;
-
-    while ((ch = getch()) != 'q')
+    while (int ch = getch())
     {
+        if (ch == 'q')
+        {
+            break;
+        }
+
+        preUpdate();
+        update();
+
         for (auto listener: _listeners)
         {
-            if (listener._callback)
-            {
-                listener._callback(ch);
-            }
+            listener._callback(ch);
         }
 
-        for (auto timer: _timers)
-        {
-            if (timer._callback)
-            {
-                timer._callback(_fps * 0.001f);
-            }
-        }
+        postUpdate();
     }
 }
+
+void Director::preUpdate()
+{
+    for (auto win: _windows)
+    {
+        wclear(win);
+        box(win, 0, 0);
+    }
+    
+    for (auto preUpdate: _preUpdates)
+    {
+        preUpdate._callback();
+    }
+}
+
+void Director::update()
+{
+    for (auto update: _updates)
+    {
+        update._callback(_fps * 0.001f);
+    }
+}
+
+void Director::postUpdate()
+{
+    for (auto postUpdate: _postUpdates)
+    {
+        postUpdate._callback();
+    }
+
+    for (auto win: _windows)
+    {
+        wrefresh(win);
+    }
+}
+
 
 NS_JALB_END

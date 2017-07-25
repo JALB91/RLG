@@ -6,6 +6,7 @@ add_subdirectory(jalb)
 include_directories(include jalb)
 
 set(SOURCES
+	src/GameScene.cpp
     src/Map.cpp
     src/GameManager.cpp
     src/main.cpp

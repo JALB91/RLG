@@ -27,6 +27,8 @@ bool Node::init()
 
 Node::Node()
 {
+    _win = stdscr;
+    
     _name = "";
 
     _z_ord = 0;
@@ -57,7 +59,17 @@ void Node::draw()
    }
 }
 
+void Node::preUpdate()
+{
+
+}
+
 void Node::update(float delta)
+{
+
+}
+
+void Node::postUpdate()
 {
 
 }
@@ -135,9 +147,19 @@ void Node::removeChildByTag(int tag)
 }
 
 
+void Node::schedulePreUpdate()
+{
+    Director::getInstance()->schedulePreUpdate(CALLBACK_0(Node::preUpdate, this), this);
+}
+
 void Node::scheduleUpdate()
 {
-    Director::getInstance()->schedule(std::bind(&Node::update, this, std::placeholders::_1), this, "update");
+    Director::getInstance()->scheduleUpdate(CALLBACK_1(Node::update, this), this, "update");
+}
+
+void Node::schedulePostUpdate()
+{
+    Director::getInstance()->schedulePostUpdate(CALLBACK_0(Node::postUpdate, this), this);
 }
 
 NS_JALB_END

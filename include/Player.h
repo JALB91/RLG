@@ -5,10 +5,14 @@
 
 USING_NS_JALB;
 
+class GameManager;
+
 class Player : public Node
 {
     public:
-        static Player* create();
+        static Player* create(GameManager* gm);
+
+        virtual ~Player();
 
         void draw() override;
         void handleInput(const int ch);
@@ -17,12 +21,12 @@ class Player : public Node
         void interact(const Pos& p);
 
     protected:
-        Player();
-        virtual ~Player();
+        Player(GameManager* gm);
 
         bool init() override;
 
     private:
+        GameManager* gm = nullptr;
 
 };
 

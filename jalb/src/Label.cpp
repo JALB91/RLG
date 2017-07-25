@@ -52,7 +52,7 @@ void Label::draw()
 {
 	Node::draw();
 
-	mvwprintw(_win, getPositionY(), getPositionX(), "%s", _text.c_str());
+	mvwprintw(_win, getPositionY(), getPositionX() - _text.size() * 0.5f, "%s", _text.c_str());
 }
 
 NS_JALB_END

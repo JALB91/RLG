@@ -11,7 +11,7 @@ USING_NS_JALB;
 class GameManager: public Node
 {
     public:
-        static GameManager* getInstance();
+        static GameManager* create();
 
         inline WINDOW* getGameWindow() const { return gameWin; };
         inline WINDOW* getUIWindow() const { return uiWin; };
@@ -32,8 +32,6 @@ class GameManager: public Node
         void update(float delta) override;
 
     private:
-        static GameManager* _instance;
-
         float time;
 
         WINDOW* gameWin;
@@ -41,6 +39,7 @@ class GameManager: public Node
         Map* gameMap;
         Player* player;
         Label* interactionLabel;
+        
 };
 
 #endif /* GAMEMANAGER_H */

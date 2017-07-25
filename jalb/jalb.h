@@ -5,6 +5,7 @@
 
 #include "include/Macros.h"
 #include "include/Director.h"
+#include "include/Scene.h"
 #include "include/Pos.h"
 #include "include/Node.h"
 #include "include/Label.h"

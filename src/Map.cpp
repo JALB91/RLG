@@ -1,11 +1,12 @@
 #include "Map.h"
+#include "GameManager.h"
 #include "GameConst.h"
 
 array<Pos, 4> Map::DIRS { {Pos(1, 0), Pos(0, - 1), Pos(- 1, 0), Pos(0, 1)} };
 
-Map* Map::create(Size size)
+Map* Map::create(GameManager* gm, Size size)
 {
-    Map* map = new Map(size);
+    Map* map = new Map(gm, size);
 
     if (map && map->init())
     {
@@ -16,7 +17,7 @@ Map* Map::create(Size size)
     return nullptr;
 }
 
-Map::Map(Size size) : mapSize(size)
+Map::Map(GameManager* gm, Size size) : Node(), gm(gm), mapSize(size)
 {
 
 }
@@ -116,7 +117,7 @@ void Map::findPath(Pos start)
             {
                 Pos to = came_from[curr];
 
-#if DRAW_PATH
+#if SHOW_PATH
                 if (to.x == curr.x + 1)
                 {
                     _map[curr] = '>';

@@ -22,7 +22,9 @@ class Node
 
         virtual void draw();
 
+        virtual void preUpdate();
         virtual void update(float delta);
+        virtual void postUpdate();
 
 
         inline WINDOW* getWindow() const { return _win; };
@@ -76,7 +78,9 @@ class Node
 
 	    virtual bool init();
 
+        void schedulePreUpdate();
         void scheduleUpdate();
+        void schedulePostUpdate();
 
         WINDOW* _win;
 

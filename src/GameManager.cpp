@@ -1,18 +1,18 @@
 #include "GameManager.h"
 
 
-GameManager* GameManager::_instance = nullptr;
-
-
-GameManager* GameManager::getInstance()
+GameManager* GameManager::create()
 {
-    if (!_instance)
+    GameManager* gm = new GameManager();
+
+    if (gm && gm->init())
     {
-        _instance = new GameManager();
-        _instance->init();
+        return gm;
     }
 
-    return _instance;
+    delete gm;
+
+    return nullptr;
 }
 
 
@@ -42,9 +42,12 @@ bool GameManager::init()
     gameWin = newwin(winHeight, winWidth, 1, visibleCenter.x - winWidth * 0.5f);
     keypad(gameWin, TRUE);
 
-    uiWin = newwin(5, visibleSize.width - 2, visibleSize.height - 5, 1);
+    uiWin = newwin(5, visibleSize.width - 2, visibleSize.height - 4, 1);
 
-    gameMap = Map::create(Size(28, 28));
+    Director::getInstance()->addWindow(gameWin);
+    Director::getInstance()->addWindow(uiWin);
+
+    gameMap = Map::create(this, Size(28, 28));
     
     for (int i = 1; i < 27; i++)
     {
@@ -55,16 +58,16 @@ bool GameManager::init()
     gameMap->setWindow(gameWin);
     addChild(gameMap);
 
-    player = Player::create();
+    player = Player::create(this);
     player->setWindow(gameWin);
     gameMap->addChild(player);
 
     interactionLabel = Label::create();
     interactionLabel->setWindow(uiWin);
-    interactionLabel->setPosition(visibleCenter.x, 2);
+    interactionLabel->setPosition(visibleCenter.x, 1);
     addChild(interactionLabel);
 
-    Director::getInstance()->addListener(std::bind(&GameManager::handleInput, this, std::placeholders::_1), this);
+    Director::getInstance()->addListener(CALLBACK_1(GameManager::handleInput, this), this, "GameManager");
 
     scheduleUpdate();
 
@@ -79,29 +82,13 @@ void GameManager::handleInteractions(const Pos& p)
 
 void GameManager::handleInput(const int ch)
 {
-    if (ch != 'e' && ch != 'E')
-    {
-        interactionLabel->setText("");
-    }
+    
 }
 
 
 void GameManager::update(float delta)
 {
-    wclear(gameWin);
-    wclear(uiWin);
-    mvprintw(0, 0, "TIME: %d", (int)time);
-
-    box(gameWin, 0, 0);
-    box(uiWin, 0, 0);
-
     gameMap->drawPath(player, Pos(10, 10));
-
-    this->draw();
-
-    refresh();
-    wrefresh(gameWin);
-    wrefresh(uiWin);
 
     time += delta;
 }

@@ -2,9 +2,9 @@
 #include "GameManager.h"
 
 
-Player* Player::create()
+Player* Player::create(GameManager* gm)
 {
-    Player* player = new Player();
+    Player* player = new Player(gm);
 
     if (player && player->init())
     {
@@ -23,13 +23,13 @@ bool Player::init()
         return false;
     }
 
-    Director::getInstance()->addListener(std::bind(&Player::handleInput, this, std::placeholders::_1), this);
+    Director::getInstance()->addListener(CALLBACK_1(Player::handleInput, this), this);
 
     return true;
 }
 
 
-Player::Player() : Node()
+Player::Player(GameManager* gm) : Node(), gm(gm)
 {
     
 }
@@ -87,7 +87,7 @@ void Player::handleInput(const int ch)
 
 void Player::moveTo(const Pos& p)
 {
-    if (GameManager::getInstance()->canMoveTo(p))
+    if (gm && gm->canMoveTo(p))
     {
         setPosition(p);
     }
@@ -95,5 +95,5 @@ void Player::moveTo(const Pos& p)
 
 void Player::interact(const Pos& p)
 {
-    GameManager::getInstance()->handleInteractions(p);
+    gm->handleInteractions(p);
 }

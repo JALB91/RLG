@@ -5,7 +5,8 @@ find_package(Curses REQUIRED)
 
 include_directories(${CURSES_INCLUDE_DIR} include)
 
-set(JALB_SOURCES 
+set(JALB_SOURCES
+	src/Scene.cpp 
     src/Node.cpp
     src/Label.cpp
     src/Director.cpp

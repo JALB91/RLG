@@ -9,12 +9,16 @@
 USING_NS_JALB;
 using namespace std;
 
+class GameManager;
+
 class Map: public Node
 {
     public:
         static array<Pos, 4> DIRS;
 
-        static Map* create(Size size);
+        static Map* create(GameManager* gm, Size size);
+
+        virtual ~Map();
 
         inline bool isPos(const Pos& p) const { return _map.find(p) != _map.end(); };
         inline bool isFree(const Pos& p) const { return isPos(p) && _map.find(p)->second == ' '; };
@@ -29,14 +33,14 @@ class Map: public Node
         void draw() override;
 
     protected:
-        Map(Size size);
-        virtual ~Map();
+        Map(GameManager* gm, Size size);
 
         bool init() override;
 
         vector<Pos> getNeighbours(Pos p);
 
     private:
+        GameManager* gm = nullptr;
         Size mapSize;
         Pos dest;
         unordered_map<Pos, char> _map;

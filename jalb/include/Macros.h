@@ -5,7 +5,7 @@
 #define NS_JALB_BEGIN    namespace jalb {
 #define NS_JALB_END      }
 
-#define TICKRATE        int((1.0f / 30.0f) * 1000.0f)
+#define TICKRATE        int((1.0f / 60.0f) * 1000.0f)
 
 #define COL_SIZE 2
 #define ROW_SIZE 1

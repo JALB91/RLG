@@ -6,32 +6,30 @@
 
 NS_JALB_BEGIN
 
-typedef std::function<void(float)> jFFunc;
-typedef std::function<void(int)> jIFunc;
+#define CALLBACK_0(__FUNC__, __TARGET__) std::bind(&__FUNC__, __TARGET__)
+#define CALLBACK_1(__FUNC__, __TARGET__) std::bind(&__FUNC__, __TARGET__, std::placeholders::_1)
+#define CALLBACK_2(__FUNC__, __TARGET__) std::bind(&__FUNC__, __TARGET__, std::placeholders::_1, std::placeholders::_2)
 
-struct Timer
+
+using jFunc0 = std::function<void()>;
+
+template<typename T>
+using jFunc1 = std::function<void(T)>;
+
+template<typename T1, typename T2>
+using jFunc2 = std::function<void(T1, T2)>;
+
+template<typename T>
+struct Listener
 {
-    jFFunc _callback;
+    T _callback;
     Node* _target;
     string _name;
 
-    Timer(const jFFunc& callback, Node* target, string name) :
+    Listener(const T& callback, Node* target, string name) :
         _callback(callback),
         _target(target),
         _name(name)
-    {
-
-    }
-};
-
-struct Listener
-{
-    jIFunc _callback;
-    Node* _target;
-
-    Listener(const jIFunc& callback, Node* target) :
-        _callback(callback),
-        _target(target)
     {
 
     }
