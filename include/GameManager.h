@@ -32,8 +32,6 @@ class GameManager: public Node
         void update(float delta) override;
 
     private:
-        float time;
-
         WINDOW* gameWin;
         WINDOW* uiWin;
         Map* gameMap;

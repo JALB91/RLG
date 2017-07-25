@@ -20,6 +20,10 @@ class Director
 
         void setFps(float fps);
 
+        inline float getFps() const { return _fps; };
+        inline double getTime() const { return _time; };
+        inline WINDOW* getMainWindow() const { return mainWin; };
+
         void addWindow(WINDOW* win);
         void removeWindow(WINDOW* win);
 
@@ -61,6 +65,7 @@ class Director
         static Director* _instance;
 
         float _fps;
+        double _time = 0.0;
 
         WINDOW* mainWin = nullptr;
 

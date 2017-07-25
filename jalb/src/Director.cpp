@@ -154,13 +154,13 @@ void Director::mainLoop()
         }
 
         preUpdate();
-        update();
 
         for (auto listener: _listeners)
         {
             listener._callback(ch);
         }
-
+        
+        update();
         postUpdate();
     }
 }
@@ -172,7 +172,7 @@ void Director::preUpdate()
         wclear(win);
         box(win, 0, 0);
     }
-    
+
     for (auto preUpdate: _preUpdates)
     {
         preUpdate._callback();
@@ -181,6 +181,8 @@ void Director::preUpdate()
 
 void Director::update()
 {
+    _time += _fps * 0.001f;
+
     for (auto update: _updates)
     {
         update._callback(_fps * 0.001f);

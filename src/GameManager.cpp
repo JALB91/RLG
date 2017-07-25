@@ -18,7 +18,7 @@ GameManager* GameManager::create()
 
 GameManager::GameManager() : Node()
 {
-    time = 0.0f;
+    
 }
 
 GameManager::~GameManager()
@@ -33,8 +33,6 @@ bool GameManager::init()
     {
         return false;
     }
-
-    setName("GameManager");
 
     int winWidth = 30 * COL_SIZE;
     int winHeight = 30 * ROW_SIZE;
@@ -89,6 +87,4 @@ void GameManager::handleInput(const int ch)
 void GameManager::update(float delta)
 {
     gameMap->drawPath(player, Pos(10, 10));
-
-    time += delta;
 }

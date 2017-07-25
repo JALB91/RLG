@@ -149,14 +149,11 @@ void Map::drawPath(Node* from, Pos to)
         findPath(to);
     }
 
-    Pos next = from->getPosition();
+    Pos next = came_from[from->getPosition()];
 
     while (came_from.count(next) && next != to)
     {
-        if (next != from->getPosition())
-        {
-            _path[next] = 'O';
-        }
+        _path[next] = 'O';
 
         next = came_from[next];
     }
@@ -174,6 +171,8 @@ void Map::draw()
 
         mvwaddch(_win, p2.y, p2.x, _path.count(p1) ? _path[p1] : ch);
     }
+
+    _path.clear();
 
     Node::draw();
 }
