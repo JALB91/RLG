@@ -1,6 +1,7 @@
 ### C++ ###
 # Build folder
-**/build
+build/**
+!build/.gitkeep
 
 # Prerequisites
 *.d
